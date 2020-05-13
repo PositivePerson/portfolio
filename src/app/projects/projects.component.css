@@ -1,0 +1,158 @@
+
+a:hover {
+	color: rgb(237, 235, 216);
+}
+
+a.nav-link {
+	padding: 0;
+}
+
+.projects a {
+	cursor: default;
+}
+
+/* nav a {
+	color: rgb(237, 235, 216);
+} */
+
+.description {
+	text-align: left;
+	justify-content: center;
+}
+
+.description-left {
+	padding-right: 10em;
+}
+
+.description-left p {
+	text-align: start;
+}
+
+.description-right {
+	padding-left: 10em;
+}
+
+.description-right p {
+	text-align: end;
+}
+
+.projects {
+	align-items: center;
+	position: relative;
+}
+
+.projects:hover + .expandDesc i {
+	/* background: red;  */
+	opacity: 1;
+	/* -webkit-animation: fadeinout 4s linear forwards;
+    animation: fadeinout 4s linear forwards; */
+}
+
+.projects img {
+	border-radius: 50%;
+	object-fit: cover;
+	width: 15rem;
+	height: 15rem;
+}
+
+.projects a {
+	cursor: default;
+}
+
+.projects a img {
+	cursor: pointer;
+}
+
+.expandDesc {
+	/* border: 1px solid green; */
+	margin-top: -3em;
+
+	/* height: 40px; */
+	position: relative;
+	transition: height 0.5s;
+	-webkit-transition: height 0.5s;
+	overflow: hidden;
+}
+
+.projectInfo {
+	/* background-color: red; */
+	text-align: center;
+
+	width: 20%;
+	margin: auto;
+}
+
+.projects:hover + .expandDesc .projectInfo i {
+	opacity: 1;
+	-webkit-transition: transform 150ms ease-in-out, opacity .2s ease-in-out;
+	transition: transform 150ms ease-in-out, opacity .2s ease-in-out;
+}
+
+.projectInfo i {
+	font-size: 2.5em;
+	/* transition: transform 150ms ease-in-out; */
+
+	opacity: 0;
+	-webkit-transition: transform 150ms ease-in-out, opacity .2s ease-in-out;
+	transition: transform 150ms ease-in-out, opacity .2s ease-in-out;
+
+	/* border: 1px solid green; */
+}
+
+.turnArrowUp i {
+	transform: rotate(180deg);
+}
+
+.specificProjectDescription {
+	/* width: 100%; */
+	/* display: none; */
+	margin-top: 0;
+	padding-top: 0;
+	/* border: 1px solid red; */
+	font-size: 1.5em;
+
+	height: 0;
+	position: relative;
+	transition: height 0.5s;
+	-webkit-transition: height 0.5s;
+	overflow: hidden;
+}
+
+.projectInfo:hover ~ .specificProjectDescription {
+	height: 168px;
+}
+
+.specificProjectDescription:hover {
+	height: 168px;
+}
+
+.specificProjectDescription .col-3 {
+	padding: 0px;
+}
+
+.specificProjectDescription .col-3 li {
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+	list-style: none;
+	position: relative;
+}
+
+.specificProjectDescription .col-3 li i {
+	font-size: 1.5em;
+	position: absolute;
+	/* margin-top: -6px; */
+	/* margin: 5px 5px 0px 0px; */
+}
+
+.specificProjectDescription .col-3 li span {
+	margin-left: 42px;
+}
+
+/* scrolltrigger */
+.visible, .invisible {
+  opacity: 0.0;
+  transition: opacity 0.9s ease;
+}
+.visible {
+  opacity: 1.0;
+}

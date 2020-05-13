@@ -1,0 +1,18 @@
+
+#About_me {
+	height: 15em;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	padding-top: 5%;
+	margin-left: 0;
+
+	font-family: 'Lobster', cursive;
+  font-size: 1.5em;
+
+  z-index: 100;
+}
+
+#About_me p {
+  color: rgb(237, 235, 216);
+}

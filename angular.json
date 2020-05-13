@@ -24,9 +24,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/scripts/clicks.js",
+              "src/assets/scripts/hovers.js",
+              "src/assets/scripts/scrollblock.js"
+            ]
           },
           "configurations": {
             "production": {

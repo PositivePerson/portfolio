@@ -1,0 +1,15 @@
+
+#underStartPage {
+  max-width: 75%;
+
+  color: rgb(237, 235, 216);
+}
+
+#projectsInfo {
+	margin-bottom: 3em;
+	opacity: 0.9;
+
+	font-weight: 200;
+	letter-spacing: 0.25em;
+	font-size: 2em;
+}

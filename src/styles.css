@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	/*background-color: #332821;*/
+	background-color: rgb(49, 46, 55);
+	color: rgb(237, 235, 216) !important;
+	/* 228, 203, 228 */
+  /* rgb(231, 209, 231); */
+}
+
+html {
+  overflow-y: scroll;
+  /* overflow-x: hidden; */
+}
+
+app-root {
+  font-size: 16px !important;
+  color: rgb(237, 235, 216) !important;
+}
+
+.stop-scrolling {
+	height: 100%;
+	overflow: hidden;
+}
