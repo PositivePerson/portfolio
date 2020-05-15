@@ -1,3 +1,3 @@
 
 //scroll block
-$('body').addClass('stop-scrolling');
+// $('body').addClass('stop-scrolling');

@@ -13,7 +13,7 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
       //scroll block
-      $('body').addClass('stop-scrolling');
+      // $('body').addClass('stop-scrolling');
 
 
       $(".nav-link").hover(function(){

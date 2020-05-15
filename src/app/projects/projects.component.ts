@@ -1,7 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as $ from 'jquery';
-import ScrollTrigger from '@terwanerik/scrolltrigger'
+
+// import { gsap, ScrollToPlugin, Draggable, MotionPathPlugin } from "gsap/all";
+// import gsap from "../../../node_modules/gsap/types";
+// import ScrollMagic from "../../../node_modules/ScrollMagic";
+
+// import {gsap} from "gsap";
+// import ScrollMagic from "scrollmagic";
+
+import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
+import { TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+
+
+ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
 @Component({
   selector: 'app-projects',
@@ -12,109 +25,52 @@ export class ProjectsComponent implements OnInit {
 
   constructor() { }
 
+
+
   ngOnInit(): void {
+    // const scroll = new LocomotiveScroll();
+
     $(".specificProjectDescription, .projectInfo").mouseover(function() {
       $(".projectInfo").addClass("turnArrowUp");
     }).mouseout(function() {
       $(".projectInfo").removeClass("turnArrowUp");
     });
 
-    const trigger = new ScrollTrigger({
-    // Set custom (default) options for the triggers, these can be overwritten
-    // when adding new triggers to the ScrollTrigger instance. If you pass
-    // options when adding new triggers, you'll only need to pass the object
-    // `trigger`, e.g. { once: false }
-    trigger: {
-        // If the trigger should just work one time
-        once: false,
-        offset: {
-            // Set an offset based on the elements position, returning an
-            // integer = offset in px, float = offset in percentage of either
-            // width (when setting the x offset) or height (when setting y)
-            //
-            // So setting an yOffset of 0.2 means 20% of the elements height,
-            // the callback / class will be toggled when the element is 20%
-            // in the viewport.
-            element: {
-                x: 0,
-                y: (trigger, rect, direction) => {
-                    // You can add custom offsets according to callbacks, you
-                    // get passed the trigger, rect (DOMRect) and the scroll
-                    // direction, a string of either top, left, right or
-                    // bottom.
-                    return 0.2
-                }
-            },
-            // Setting an offset of 0.2 on the viewport means the trigger
-            // will be called when the element is 20% in the viewport. So if
-            // your screen is 1200x600px, the trigger will be called when the
-            // user has scrolled for 120px.
-            viewport: {
-                x: 2,
-                y: (trigger, frame, direction) => {
-                    // We check if the trigger is visible, if so, the offset
-                    // on the viewport is 0, otherwise it's 20% of the height
-                    // of the viewport. This causes the triggers to animate
-                    // 'on screen' when the element is in the viewport, but
-                    // don't trigger the 'out' class until the element is out
-                    // of the viewport.
 
-                    // This is the same as returning Math.ceil(0.2 * frame.h)
-                    return trigger.visible ? 0 : 0.2
-                }
-            }
-        },
-        toggle: {
-            // The class(es) that should be toggled
-            class: {
-                in: 'visible', // Either a string, or an array of strings
-                out: ['invisible', 'extraClassToToggleWhenHidden']
-            },
-            callback: {
-                // A callback when the element is going in the viewport, you can
-                // return a Promise here, the trigger will not be called until
-                // the promise resolves.
-                in: null,
-                // A callback when the element is visible on screen, keeps
-                // on triggering for as long as 'sustain' is set
-                visible: null,
-                // A callback when the element is going out of the viewport.
-                // You can also return a promise here, like in the 'in' callback.
-                //
-                // Here an example where all triggers take 10ms to trigger
-                // the 'out' class.
-                out: (trigger) => {
-                    // `trigger` contains the Trigger object that goes out
-                    // of the viewport
-                    return new Promise((resolve, reject) => {
-                        setTimeout(resolve, 10)
-                    })
-                }
-            }
-        },
-    },
-    // Set custom options and callbacks for the ScrollAnimationLoop
-    scroll: {
-        // The amount of ms the scroll loop should keep triggering after the
-        // scrolling has stopped. This is sometimes nice for canvas
-        // animations.
-        sustain: 200,
-        // Window|HTMLDocument|HTMLElement to check for scroll events
-        element: window,
-        // Add a callback when the user has scrolled, keeps on triggering for
-        // as long as the sustain is set to do
-        // callback: didScroll,
-        // Callback when the user started scrolling
-        start: () => {},
-        // Callback when the user stopped scrolling
-        stop: () => {},
-        // Callback when the user changes direction in scrolling
-        directionChange: () => {}
+    var tl = new TimelineMax({onUpdate:updatePercentage});
+    var tl2 = new TimelineMax();
+    const controller = new ScrollMagic.Controller();
+
+    tl.from('blockquote', .5, {x:200, opacity: 0});
+    tl.from('#spann', 1, { width: 0}, "=-.5");
+    tl.from('#office', 1, {x:-200, opacity: 0,ease: Power4.easeInOut}, "=-1");
+    tl.from('#building', 1, {x:200, opacity: 0, ease: Power4.easeInOut}, "=-.7");
+
+    tl2.from("#box", 1, {opacity: 0, scale: 0});
+    tl2.to("#box", .5, {left: "20%", scale: 1.3})
+
+    const scene = new ScrollMagic.Scene({
+      triggerElement: ".sticky",
+                triggerHook: "onLeave",
+                duration: "100%"
+    })
+      .setPin(".sticky")
+      .setTween(tl)
+    		.addTo(controller);
+
+    const scene2 = new ScrollMagic.Scene({
+      triggerElement: "blockquote"
+    })
+      .setTween(tl2)
+    		.addTo(controller);
+
+
+    function updatePercentage() {
+      //percent.innerHTML = (tl.progress() *100 ).toFixed();
+      tl.progress();
+      console.log(tl.progress());
     }
-  })
-
-  trigger.add('.projects');
-
   }
+
 
 }
