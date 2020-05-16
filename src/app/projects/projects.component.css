@@ -7,6 +7,10 @@ a.nav-link {
 	padding: 0;
 }
 
+hr {
+  background: rgba(40, 39, 43, 0.7);
+}
+
 .projects a {
 	cursor: default;
 }
@@ -38,7 +42,10 @@ a.nav-link {
 
 .projects {
 	align-items: center;
-	position: relative;
+  position: relative;
+
+  padding-top: 4.5em;
+  padding-bottom: 4.5em;
 }
 
 .projects:hover + .expandDesc i {
@@ -111,6 +118,7 @@ a.nav-link {
 	/* border: 1px solid red; */
 	font-size: 1.5em;
 
+  width: 85%;
 	height: 0;
 	position: relative;
 	transition: height 0.5s;
@@ -159,10 +167,9 @@ a.nav-link {
 
 
 /* style scroll-animated things */
-section .sticky{
-  /* height: 100vh; */
+section #thirdSectiotn{
   position: relative;
-  box-sizing: border-box; /* ussless */
+  box-sizing: border-box;
 }
 
 section blockquote {
@@ -173,32 +180,11 @@ section blockquote {
 section span {
   width: 100%;
   background: red;
-  display: block;
   height: 5px;
   margin-top: 20px;
 }
 
-/* section img {
-  position: absolute;
-}
-
-section img:nth-of-type(1) {
-  width: 40%;
-  right: 0;
-  top: 20%;
-}
-
-section img:nth-of-type(2) {
-  width: 40%;
-  right: 40%;
-  top: 29%;
-  margin-top: 15%;
-} */
-
-section .sticky {
-  background: rgb(40, 39, 43) !important;
-}
-
+/*
 #box {
   width: 100px;
   height: 100px;
@@ -206,4 +192,4 @@ section .sticky {
   border: 5px solid lightgray;
   margin: auto;
   top: 0; left: 0; right: 0; left: 0;
-}
+} */

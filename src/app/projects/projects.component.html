@@ -2,25 +2,25 @@
 
   <section class="sticky">
 
-      <div class="row align-items-center py-3 projects">
+    <div *ngFor="let project of projects; let even = even; let odd = odd;">
+
+      <!-- ---------------------------------- EVEN ---------------------------------------------- -->
+
+      <div class="row align-items-center projects" *ngIf="even">
 
         <div class="col-1"></div>
 
         <!-- <div data-scroll="addHeight"> -->
           <div class="col-3 d-flex justify-content-center">
-            <a href="https://fun-riding.herokuapp.com/"><img id="office" src="../../assets/imgs/yelpcamp.png" round/></a>
+            <a href="https://fun-riding.herokuapp.com/"><img src="../../assets/imgs/{{project.img}}" round/></a>
           </div>
         <!-- </div> -->
 
-        <div class="col-8 text-left description-left h-100">
-
-        <blockquote>
+        <div class="col-8 h-100" [ngClass]="{'description-left': even , 'description-right': odd}">
 
           <div class="description text-center">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
           </div>
-
-        </blockquote>
 
         <span id="spann"></span>
 
@@ -28,16 +28,85 @@
 
       </div>
 
+      <!-- ---------------------------------- ODD ---------------------------------------------- -->
+
+      <div class="row d-flex align-items-center projects" *ngIf="odd">
+
+        <div class="col-8 h-100" [ngClass]="{'description-left': even , 'description-right': odd}">
+
+          <div class="description text-center">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          </div>
+
+        </div>
+
+        <div class="col-3 d-flex justify-content-center">
+          <a href="https://positiveperson.github.io/To-Do-List/"><img src="../../assets/imgs/{{project.img}}" round/></a>
+        </div>
+
+        <div class="col-1"></div>
+
+      </div>
+
+      <!-- ---------------------------------- ODD & EVEN----------------------------------------- -->
+
       <div class="expandDesc">
 
         <div class="projectInfo">
           <i class="fas fa-chevron-down"></i>
         </div>
 
-        <div class="row px-3 mx-3 specificProjectDescription">
-          <div class="col-2"></div>
+        <div class="row px-3 mx-auto specificProjectDescription">
+          <div class="col-2" *ngIf="odd"></div>
+          <div class="col-2" *ngIf="even"></div>
 
-          <div class="col-3">
+          <div class="col-9">
+            <div class="row" *ngIf="project.tools.length == 1">
+              <div class="col-12"><i class="fas fa-clipboard-check"></i><span>{{project.tools[0]}}</span></div>
+            </div>
+
+            <div class="row" *ngIf="project.tools.length == 2">
+              <div class="col-6"><i class="fas fa-clipboard-check"></i><span>{{project.tools[0]}}</span></div>
+              <div class="col-6"><i class="fas fa-clipboard-check"></i><span>{{project.tools[1]}}</span></div>
+            </div>
+
+            <div class="row" *ngIf="project.tools.length >= 3">
+              <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[0]}}</span></div>
+              <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[1]}}</span></div>
+              <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[2]}}</span></div>
+            </div>
+
+            <div class="row" *ngIf="project.tools.length >= 6">
+              <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[3]}}</span></div>
+              <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[4]}}</span></div>
+              <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[5]}}</span></div>
+            </div>
+
+            <div class="row" *ngIf="project.tools.length > 3 && project.tools.length % 3 != 0 && project.tools.length != 2 && project.tools.length != 1">
+              <div class="row" *ngIf="project.tools.length % 3 == 1">
+                <div class="col-12"><i class="fas fa-clipboard-check"></i><span>{{project.tools[project.tools.length-1]}}</span></div>
+              </div>
+
+              <div class="row" *ngIf="project.tools.length % 3 == 2">
+                <div class="col-6"><i class="fas fa-clipboard-check"></i><span>{{project.tools[project.tools.length-1]}}</span></div>
+                <div class="col-6"><i class="fas fa-clipboard-check"></i><span>{{project.tools[project.tools.length-2]}}</span></div>
+              </div>
+            </div>
+
+            <!-- <div *ngFor="let tool of project.tools; let i = index">
+
+              <div class="row">
+                <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[i]}}</span></div>
+                <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[i]}}</span></div>
+                <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[i]}}</span></div>
+              </div>
+
+            </div> -->
+
+
+          </div>
+
+          <!-- <div class="col-3">
             <ul>
               <li><i class="fas fa-clipboard-check"></i><span> Javascript</span></li>
               <li><i class="fas fa-clipboard-check"></i><span> Jquery</span></li>
@@ -45,7 +114,7 @@
           </div>
           <div class="col-3">
             <ul>
-              <li><i class="fas fa-clipboard-check"></i><span>HTML</span></li>
+              <li><i class="fas fa-clipboard-check"></i><span> </span></li>
               <li><i class="fas fa-clipboard-check"></i><span>CSS</span></li>
             </ul>
           </div>
@@ -54,16 +123,19 @@
               <li><i class="fas fa-clipboard-check"></i><span>Bootstrap</span></li>
               <li><i class="fas fa-clipboard-check"></i><span>Semantic</span></li>
             </ul>
-          </div>
+          </div> -->
 
-          <div class="col-1"></div>
+          <div class="col-1" *ngIf="odd"></div>
+          <div class="col-1" *ngIf="even"></div>
         </div>
 
       </div>
 
-      <hr>
+      <hr class="projectHr">
 
-      <div class="row d-flex align-items-center py-3 projects">
+    </div>
+
+      <!-- <div class="row d-flex align-items-center py-3 projects">
 
         <div class="col-8 text-left description-right">
           <div class="description text-center">
@@ -72,7 +144,7 @@
         </div>
 
         <div class="col-3 d-flex justify-content-center">
-          <a href="https://positiveperson.github.io/To-Do-List/"><img id="building" src="../../assets/imgs/TodoPage.png" round/></a>
+          <a href="https://positiveperson.github.io/To-Do-List/"><img src="../../assets/imgs/TodoPage.png" round/></a>
         </div>
 
         <div class="col-1"></div>
@@ -112,9 +184,7 @@
 
       </div>
 
-      <div id="box"></div>
-
-      <hr>
+      <hr class="projectHr">
 
       <div class="row d-flex align-items-center py-3 projects">
 
@@ -132,7 +202,7 @@
 
       </div>
 
-      <hr>
+      <hr class="projectHr">
 
       <div class="row d-flex align-items-center py-3 projects">
 
@@ -148,7 +218,7 @@
 
         <div class="col-1"></div>
 
-      </div>
+      </div> -->
 
   </section>
 

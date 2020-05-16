@@ -1,4 +1,9 @@
 
+#container {
+  max-width: 75%;
+  height: 100%;
+}
+
 #About_me {
 	/* height: 15em; */
 	width: 100%;
@@ -6,6 +11,25 @@
 	/* padding-top: 25%; */
 	margin-left: 0;
   z-index: 100;
+}
+
+#nextPage {
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 1.4em;
+  padding-top: 2em;
+
+  width: 100%;
+}
+
+#nextPage i {
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 3em;
 }
 
 p {
@@ -23,4 +47,6 @@ img {
 section {
   height: 100vh !important;
   position: relative;
+
+  background: #28272b;
 }

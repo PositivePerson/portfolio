@@ -1,11 +1,14 @@
 
 #underStartPage {
-  max-width: 75%;
+  /* max-width: 75%; */
+  padding-left: 0;
+  padding-right: 0;
 
   color: rgb(237, 235, 216);
 }
 
 #projectsInfo {
+  padding-top: 3em;
 	margin-bottom: 3em;
 	opacity: 0.9;
 

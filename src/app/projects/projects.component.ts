@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Project } from '../projectsData/project-template';
+import { PROJECTS } from '../projectsData/projects';
+
 import * as $ from 'jquery';
 
 // import { gsap, ScrollToPlugin, Draggable, MotionPathPlugin } from "gsap/all";
@@ -12,6 +15,7 @@ import * as $ from 'jquery';
 import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
 import { TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+import { ProjectService } from '../project.service';
 
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
@@ -22,8 +26,11 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
+  projects: Project[];
 
-  constructor() { }
+  constructor( projectService: ProjectService) {
+    this.projects = projectService.getProjects();
+   }
 
 
 
@@ -36,37 +43,23 @@ export class ProjectsComponent implements OnInit {
       $(".projectInfo").removeClass("turnArrowUp");
     });
 
-
+    //------------------------------------
+    //            animation
     var tl = new TimelineMax({onUpdate:updatePercentage});
-    var tl2 = new TimelineMax();
     const controller = new ScrollMagic.Controller();
 
-    tl.from('blockquote', .5, {x:200, opacity: 0});
-    tl.from('#spann', 1, { width: 0}, "=-.5");
-    tl.from('#office', 1, {x:-200, opacity: 0,ease: Power4.easeInOut}, "=-1");
-    tl.from('#building', 1, {x:200, opacity: 0, ease: Power4.easeInOut}, "=-.7");
-
-    tl2.from("#box", 1, {opacity: 0, scale: 0});
-    tl2.to("#box", .5, {left: "20%", scale: 1.3})
+    tl.from(".projectHr", .5, {x:500, opacity: 0.3});
 
     const scene = new ScrollMagic.Scene({
       triggerElement: ".sticky",
                 triggerHook: "onLeave",
                 duration: "100%"
     })
-      .setPin(".sticky")
+      .setPin("sticky")
       .setTween(tl)
-    		.addTo(controller);
-
-    const scene2 = new ScrollMagic.Scene({
-      triggerElement: "blockquote"
-    })
-      .setTween(tl2)
-    		.addTo(controller);
-
+        .addTo(controller);
 
     function updatePercentage() {
-      //percent.innerHTML = (tl.progress() *100 ).toFixed();
       tl.progress();
       console.log(tl.progress());
     }
