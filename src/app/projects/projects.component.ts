@@ -61,7 +61,7 @@ export class ProjectsComponent implements OnInit {
 
     function updatePercentage() {
       tl.progress();
-      console.log(tl.progress());
+      // console.log(tl.progress());
     }
   }
 

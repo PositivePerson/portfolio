@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import * as $ from 'jquery';
 
+import { Observable } from "intersection-observer";
+
 import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
 import { TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
@@ -19,7 +21,24 @@ export class AboutmeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    const subPage = document.querySelector("#secondSection");
 
+    const observer = new IntersectionObserver((entries) => {
+
+      console.log(entries);
+      console.log(entries[0].intersectionRatio);
+
+      // $("#navbar").toggleClass("scrolled");
+
+      if(entries[0].intersectionRatio > 0) {
+        $("#navbar").addClass("scrolled").removeClass("scrollerLower");
+      } else {
+        $("#navbar").removeClass("scrolled").addClass("scrollerLower");
+      }
+
+    })
+
+    observer.observe(subPage);
 
 
     //                            animation

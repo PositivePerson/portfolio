@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 import * as $ from 'jquery';
 
+import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
+import { TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+
+ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,13 +18,53 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-      //navbar showing
+
+      // var tlNavbar = new TimelineMax({onUpdate:updatePercentage});
+      // const controllerNavbar = new ScrollMagic.Controller();
+
+      // const sceneNavbar = new ScrollMagic.Scene()
+
+      // if( sceneNavbar.scrollOffset() )
+
+      // function updatePercentage() {
+      //   tlNavbar.progress();
+      //   console.log(tlNavbar.progress());
+      // }
+
+
+
+      //          navbar showing
       $(function () {
         $(document).scroll(function () {
             var $nav = $("#navbar");
-            $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            $nav.toggleClass("notscrolled", $(this).scrollTop() <= $nav.height());
+            // if( $(this).scrollTop() <= $nav.height() ){
+
+            //   $nav.toggleClass("notscrolled");
+
+            //   if($nav.hasClass("scrolled")){
+            //     $nav.removeClass("scrolled");
+            //   }
+
+            //   if($nav.hasClass("scrolledLower")){
+            //     $nav.removeClass("scrolledLower");
+            //   }
+
+            // } else {
+
+            //   $nav.addClass("scrolled");
+            //   $nav.addClass("scrolledLower");
+
+            // }
         });
       });
+
+      // $(function () {
+      //   let position = window.pageYOffset;
+      //   console.log("Position is: " + position)
+      //   $("#navbar").toggleClass("scrolledLower", position > 500);
+      // });
+
 
       //click 'About me'
       $("#goToMainWelcome").click(function() {
