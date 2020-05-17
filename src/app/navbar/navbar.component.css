@@ -22,13 +22,13 @@ a.nav-link {
 }
 
 .navbar .notscrolled {
-  background: transparent !important;
+  background: transparent;
   transition: background 500ms;
   box-shadow: none;
 }
 
 .navbar.scrolled {
-	background: #28272b !important;
+	background: #28272b ;
 	transition: background 500ms;
     box-shadow:
                 0 3px 5px -1px rgba(0, 0, 0, .2),

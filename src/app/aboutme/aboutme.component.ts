@@ -22,22 +22,19 @@ export class AboutmeComponent implements OnInit {
   ngOnInit(): void {
 
     const subPage = document.querySelector("#secondSection");
-
     const observer = new IntersectionObserver((entries) => {
 
       console.log(entries);
       console.log(entries[0].intersectionRatio);
-
       // $("#navbar").toggleClass("scrolled");
 
       if(entries[0].intersectionRatio > 0) {
-        $("#navbar").addClass("scrolled").removeClass("scrollerLower");
+        $("#navbar").addClass("scrolled").removeClass("scrolledLower");
       } else {
-        $("#navbar").removeClass("scrolled").addClass("scrollerLower");
+        $("#navbar").addClass("scrolledLower").removeClass("scrolled");
       }
 
     })
-
     observer.observe(subPage);
 
 

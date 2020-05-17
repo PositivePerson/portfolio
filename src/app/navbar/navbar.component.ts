@@ -37,25 +37,24 @@ export class NavbarComponent implements OnInit {
       $(function () {
         $(document).scroll(function () {
             var $nav = $("#navbar");
-            $nav.toggleClass("notscrolled", $(this).scrollTop() <= $nav.height());
-            // if( $(this).scrollTop() <= $nav.height() ){
+            // $nav.toggleClass("notscrolled", $(this).scrollTop() <= $nav.height());
+            if( $(this).scrollTop() <= $nav.height() ){
 
-            //   $nav.toggleClass("notscrolled");
+              $nav.addClass("notscrolled").removeClass("scrolled");
 
-            //   if($nav.hasClass("scrolled")){
-            //     $nav.removeClass("scrolled");
-            //   }
+              // if($nav.hasClass("scrolled")){
+              //   $nav.removeClass("scrolled");
+              // }
 
-            //   if($nav.hasClass("scrolledLower")){
-            //     $nav.removeClass("scrolledLower");
-            //   }
+              // if($nav.hasClass("scrolledLower")){
+              //   $nav.removeClass("scrolledLower");
+              // }
 
-            // } else {
+            } else {
 
-            //   $nav.addClass("scrolled");
-            //   $nav.addClass("scrolledLower");
+              $nav.addClass("scrolled").removeClass("notscrolled");
 
-            // }
+            }
         });
       });
 
