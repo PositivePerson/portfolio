@@ -21,24 +21,29 @@ export class AboutmeComponent implements OnInit {
 
   ngOnInit(): void {
 
+    //                  navigation - color
+    var firstExecution = true;
     const subPage = document.querySelector("#secondSection");
     const observer = new IntersectionObserver((entries) => {
 
       console.log(entries);
       console.log(entries[0].intersectionRatio);
-      // $("#navbar").toggleClass("scrolled");
 
       if(entries[0].intersectionRatio > 0) {
         $("#navbar").addClass("scrolled").removeClass("scrolledLower");
-      } else {
+      }
+      else if(entries[0].intersectionRatio <= 0 && !firstExecution) {
         $("#navbar").addClass("scrolledLower").removeClass("scrolled");
       }
-
+      else {
+        // console.log(" 'firstExecution' is " + firstExecution);
+        firstExecution = false;
+      }
     })
     observer.observe(subPage);
 
 
-    //                            animation
+    //                     animation
     var tlAbout = new TimelineMax({onUpdate:updatePercentage});
     // var tlAbout = new TimelineMax();
     const controller = new ScrollMagic.Controller();
