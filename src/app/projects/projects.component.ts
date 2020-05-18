@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, ElementRef, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChildren, ElementRef, QueryList, AfterViewInit } from '@angular/core';
 
 import { Project } from '../projectsData/project-template';
 import { PROJECTS } from '../projectsData/projects';
@@ -20,21 +20,22 @@ import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import { ProjectService } from '../project.service';
 
 
-ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+// ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: Project[];
 
   constructor( projectService: ProjectService) {
     this.projects = projectService.getProjects();
    }
 
-@ViewChildren('[#animatedElement]')  animatedElements: QueryList<ElementRef>;
+@ViewChildren('animatedElement' )  animatedElements: QueryList<ElementRef>;
+// @ViewChildren('animatedElement' )  animatedElements: ElementRef;
 
   ngOnInit(): void {
     // const scroll = new LocomotiveScroll();
@@ -77,13 +78,20 @@ export class ProjectsComponent implements OnInit {
       $(".projectInfo").removeClass("turnArrowUp");
     });
 
+    // this.animatedElements.changes.subscribe(c => {
+    //   this.animatedElements.toArray().forEach((item) => {
+    //   console.log(item);
+    //   });
+    // });
 
-    console.log("animatedElements: " + this.animatedElements);
+    // console.log("animatedElements: " + Array.from(this.animatedElements));
+    this.animatedElements.forEach((directive, index) => { console.log(index); console.log(directive); })
+
 
     //------------------------------------
     //            uncontrolled animation
-    // const projectPageElements = (document.getElementsByClassName("anim"));
-    const projectPageElements = document.querySelectorAll('.anim');
+    // const projectPageElements = document.querySelectorAll('.anim');
+    const projectPageElements = this.animatedElements.toArray();
 
     console.log(projectPageElements);
 
@@ -105,8 +113,8 @@ export class ProjectsComponent implements OnInit {
 
         })
 
-        projectPageElements.forEach(element => {
-          projectObserver.observe(element)
+        projectPageElements.forEach((element) => {
+          projectObserver.observe(element.nativeElement)
         })
 
 

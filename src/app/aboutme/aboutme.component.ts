@@ -8,7 +8,7 @@ import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to av
 import { TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
-ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+// ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
 @Component({
   selector: 'app-aboutme',
@@ -45,7 +45,6 @@ export class AboutmeComponent implements OnInit {
 
     //                     animation
     var tlAbout = new TimelineMax({onUpdate:updatePercentage});
-    // var tlAbout = new TimelineMax();
     const controller = new ScrollMagic.Controller();
 
     tlAbout.from("#profilePNG", 1, {x:-100, opacity: 0, ease: Power4.easeInOut}, "=-.8");
