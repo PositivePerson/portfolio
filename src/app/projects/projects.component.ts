@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, ElementRef, QueryList } from '@angular/core';
 
 import { Project } from '../projectsData/project-template';
 import { PROJECTS } from '../projectsData/projects';
+
+
 
 import * as $ from 'jquery';
 
@@ -32,19 +34,15 @@ export class ProjectsComponent implements OnInit {
     this.projects = projectService.getProjects();
    }
 
-
+@ViewChildren('[#animatedElement]')  animatedElements: QueryList<ElementRef>;
 
   ngOnInit(): void {
     // const scroll = new LocomotiveScroll();
 
-    $(".specificProjectDescription, .projectInfo").mouseover(function() {
-      $(".projectInfo").addClass("turnArrowUp");
-    }).mouseout(function() {
-      $(".projectInfo").removeClass("turnArrowUp");
-    });
+
 
     //------------------------------------
-    //            animation
+    //            controlled animation
     var tl = new TimelineMax({onUpdate:updatePercentage});
     const controller = new ScrollMagic.Controller();
 
@@ -63,6 +61,56 @@ export class ProjectsComponent implements OnInit {
       tl.progress();
       // console.log(tl.progress());
     }
+
+
+
+
+  }
+
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+
+    $(".specificProjectDescription, .projectInfo").mouseover(function() {
+      $(".projectInfo").addClass("turnArrowUp");
+    }).mouseout(function() {
+      $(".projectInfo").removeClass("turnArrowUp");
+    });
+
+
+    console.log("animatedElements: " + this.animatedElements);
+
+    //------------------------------------
+    //            uncontrolled animation
+    // const projectPageElements = (document.getElementsByClassName("anim"));
+    const projectPageElements = document.querySelectorAll('.anim');
+
+    console.log(projectPageElements);
+
+        var projectObserver = new IntersectionObserver((entries) => {
+
+
+          console.log("intersectionRatio is: " + entries[0].intersectionRatio);
+
+
+            entries.forEach(entry => {
+                if(entry.intersectionRatio > 0) {
+                    entry.target.style.animation = `anim1 2s ${entry.target.dataset.delay} forwards ease-out`;
+                    console.log("indeed intersectionRatio is: " + entry.intersectionRatio);
+                  }
+                else {
+                    entry.target.style.animation = 'none';
+                }
+            })
+
+        })
+
+        projectPageElements.forEach(element => {
+          projectObserver.observe(element)
+        })
+
+
+
   }
 
 

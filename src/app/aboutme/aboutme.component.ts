@@ -48,10 +48,10 @@ export class AboutmeComponent implements OnInit {
     // var tlAbout = new TimelineMax();
     const controller = new ScrollMagic.Controller();
 
-    tlAbout.from("img #profilePNG", 1, {x:-100, opacity: 0.1, ease: Power4.easeInOut}, "=-.8");
-    tlAbout.to("img #profilePNG", 1, {x:0 , opacity: 1});
+    tlAbout.from("#profilePNG", 1, {x:-100, opacity: 0, ease: Power4.easeInOut}, "=-.8");
+    tlAbout.to("#profilePNG", 1, {x:0 , opacity: 1});
 
-    tlAbout.from("#firstDesc", 1, {x:300, opacity: 0.1, ease: Power4.easeInOut}, "=-1.8");
+    tlAbout.from("#firstDesc", 1, {x:300, opacity: 0, ease: Power4.easeInOut}, "=-1.8");
     tlAbout.to("#firstDesc", 1, {x:0 , opacity: 1, ease: Power4.easeInOut});
 
     tlAbout.from("#secondDesc", 1, {x:-180, opacity: 0,ease: Power4.easeInOut}, "=-2.35");
@@ -78,8 +78,8 @@ export class AboutmeComponent implements OnInit {
     //         scroll to the next section
     $("#nextPage").one('mouseover', function() {
       $([document.documentElement, document.body]).animate({
-          scrollTop: $("#projectsInfo").offset().top
-      }, 800);
+          scrollTop: $("app-projects").offset().top
+      }, 1100, "swing");
 
       $("#navbar").addClass("scrolledLower").removeClass("scrolled");
 

@@ -19,13 +19,43 @@ hr {
 	color: rgb(237, 235, 216);
 } */
 
+.anim {
+  opacity: 0;
+}
+
+@keyframes anim1 {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to  {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes anim2 {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to  {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .description {
 	text-align: left;
 	justify-content: center;
 }
 
+.description p {
+  text-indent: 1.5em;
+}
+
 .description-left {
-	padding-right: 10em;
+	/* padding-right: 10em; */
 }
 
 .description-left p {
@@ -33,16 +63,22 @@ hr {
 }
 
 .description-right {
-	padding-left: 10em;
+	/* padding-left: 10em; */
 }
 
 .description-right p {
-	text-align: end;
+	text-align: start;
+}
+
+.description p {
+  font-size: 1.35em;
 }
 
 .projects {
 	align-items: center;
   position: relative;
+
+  height: 100vh;
 
   padding-top: 4.5em;
   padding-bottom: 4.5em;
@@ -56,10 +92,10 @@ hr {
 }
 
 .projects img {
-	border-radius: 50%;
+	border-radius: 13%;
 	object-fit: cover;
-	width: 15rem;
-	height: 15rem;
+	width: 25em;
+	height: 25em;
 }
 
 .projects a {
@@ -67,14 +103,18 @@ hr {
 }
 
 .projects a img {
-	cursor: pointer;
+  cursor: pointer;
+
+  /* z-index: 5; */
+
+  -webkit-box-shadow: 1px 1px 15px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 15px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 15px -3px rgba(0,0,0,0.75);
 }
 
 .expandDesc {
-	/* border: 1px solid green; */
 	margin-top: -3em;
 
-	/* height: 40px; */
 	position: relative;
 	transition: height 0.5s;
 	-webkit-transition: height 0.5s;
@@ -82,7 +122,6 @@ hr {
 }
 
 .projectInfo {
-	/* background-color: red; */
 	text-align: center;
 
 	width: 20%;
@@ -97,13 +136,30 @@ hr {
 
 .projectInfo i {
 	font-size: 2.5em;
-	/* transition: transform 150ms ease-in-out; */
-
 	opacity: 0;
 	-webkit-transition: transform 150ms ease-in-out, opacity .2s ease-in-out;
 	transition: transform 150ms ease-in-out, opacity .2s ease-in-out;
+}
 
-	/* border: 1px solid green; */
+.imgLine {
+  opacity: 0;
+
+  position: absolute;
+  width: 70vh;
+  height: 3.5px;
+  background: rgb(237, 235, 216);
+  top: -4em;
+  left: -16em;
+
+  /* z-index: 1; */
+}
+
+.descLine {
+  position: absolute;
+  width: 50vh;
+  height: 2.5px;
+  background: rgb(237, 235, 216);
+  /* z-index: 5; */
 }
 
 .turnArrowUp i {
@@ -111,11 +167,8 @@ hr {
 }
 
 .specificProjectDescription {
-	/* width: 100%; */
-	/* display: none; */
 	margin-top: 0;
 	padding-top: 0;
-	/* border: 1px solid red; */
 	font-size: 1.5em;
 
   width: 85%;
@@ -183,13 +236,3 @@ section span {
   height: 5px;
   margin-top: 20px;
 }
-
-/*
-#box {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  border: 5px solid lightgray;
-  margin: auto;
-  top: 0; left: 0; right: 0; left: 0;
-} */
