@@ -69,6 +69,7 @@ export class NavbarComponent implements OnInit {
       $("#goToMainWelcome").click(function() {
         console.log("clicked goToMainWelcome");
         $('html, body').animate({scrollTop: 0}, 500);
+        $("#navbar").addClass("scrolled").removeClass("scrolledLower");
       });
   }
 

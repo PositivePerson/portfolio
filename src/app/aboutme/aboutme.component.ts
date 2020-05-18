@@ -74,10 +74,14 @@ export class AboutmeComponent implements OnInit {
       tlAbout.progress();
     }
 
+
+    //         scroll to the next section
     $("#nextPage").one('mouseover', function() {
       $([document.documentElement, document.body]).animate({
           scrollTop: $("#projectsInfo").offset().top
       }, 800);
+
+      $("#navbar").addClass("scrolledLower").removeClass("scrolled");
 
       $(this).fadeTo(850, 0);
     });
