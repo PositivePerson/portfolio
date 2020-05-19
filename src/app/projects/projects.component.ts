@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, ElementRef, QueryList, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, ElementRef, QueryList, AfterViewInit, ViewEncapsulation, HostBinding } from '@angular/core';
 
 import { Project } from '../projectsData/project-template';
 import { PROJECTS } from '../projectsData/projects';
@@ -25,22 +25,22 @@ import { ProjectService } from '../project.service';
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  styleUrls: ['./projects.component.css'],
+  // encapsulation: ViewEncapsulation.None
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: Project[];
+
+  private projectObserver: IntersectionObserver;
 
   constructor( projectService: ProjectService) {
     this.projects = projectService.getProjects();
    }
 
-@ViewChildren('animatedElement' )  animatedElements: QueryList<ElementRef>;
-// @ViewChildren('animatedElement' )  animatedElements: ElementRef;
+  @ViewChildren('animatedElement' )  animatedElements: QueryList<ElementRef>;
+  // @ViewChildren('animatedElement' )  animatedElements: ElementRef;
 
   ngOnInit(): void {
-    // const scroll = new LocomotiveScroll();
-
-
 
     //------------------------------------
     //            controlled animation
@@ -85,7 +85,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     // });
 
     // console.log("animatedElements: " + Array.from(this.animatedElements));
-    this.animatedElements.forEach((directive, index) => { console.log(index); console.log(directive); })
+    // this.animatedElements.forEach((directive, index) => { console.log(index); console.log(directive); })
 
 
     //------------------------------------
@@ -93,20 +93,24 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     // const projectPageElements = document.querySelectorAll('.anim');
     const projectPageElements = this.animatedElements.toArray();
 
-    console.log(projectPageElements);
+    // console.log("projectPageElements ", projectPageElements);
+    // console.log("type of .nativeElement from this array above: ", typeof projectPageElements[0].nativeElement);
 
-        var projectObserver = new IntersectionObserver((entries) => {
+        this.projectObserver = new IntersectionObserver((entries) => {
 
-
-          console.log("intersectionRatio is: " + entries[0].intersectionRatio);
-
+          // console.log("intersectionRatio is: " + entries[0].intersectionRatio);
 
             entries.forEach(entry => {
                 if(entry.intersectionRatio > 0) {
+                  // console.log( typeof entry.target );
+                  // console.log( entry.target );
+
+                    //@ts-ignore
                     entry.target.style.animation = `anim1 2s ${entry.target.dataset.delay} forwards ease-out`;
-                    console.log("indeed intersectionRatio is: " + entry.intersectionRatio);
+                    // console.log("indeed intersectionRatio is: " + entry.intersectionRatio);
                   }
                 else {
+                    //@ts-ignore
                     entry.target.style.animation = 'none';
                 }
             })
@@ -114,7 +118,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
         })
 
         projectPageElements.forEach((element) => {
-          projectObserver.observe(element.nativeElement)
+          this.projectObserver.observe(element.nativeElement as HTMLInputElement);
         })
 
 
