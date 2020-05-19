@@ -12,9 +12,9 @@
 
         <!-- <div data-scroll="addHeight"> -->
           <div class="col-3 col-xl-2 d-flex justify-content-center">
-            <div class="imgLine rounded"></div>
+            <div class="imgLineLeft rounded anim" #animatedElement data-animation="2" data-delay=".1s"></div>
 
-            <a href="https://fun-riding.herokuapp.com/" #animatedElement class="anim" data-delay=".3s"><img src="../../assets/imgs/{{project.img}}" round/></a>
+            <a href="https://fun-riding.herokuapp.com/" #animatedElement class="anim" data-animation="1" data-delay=".3s"><img src="../../assets/imgs/{{project.img}}" round/></a>
           </div>
         <!-- </div> -->
 
@@ -23,12 +23,10 @@
         <div class="col-4" [ngClass]="{'description-left': even , 'description-right': odd}">
 
           <div class="description text-center pl-xl-1 pr-xl-3">
-            <p class="pr-xl-5 anim" #animatedElement data-delay="0s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in rhoncus nibh. Curabitur rhoncus massa diam. Proin egestas libero sit amet leo semper, a sollicitudin quam sodales. Sed iaculis ultricies imperdiet. Aliquam ullamcorper faucibus ante ac aliquet.</p>
+            <p class="pr-xl-5 anim" #animatedElement data-animation="1" data-delay=".1s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in rhoncus nibh. Curabitur rhoncus massa diam. Proin egestas libero sit amet leo semper, a sollicitudin quam sodales. Sed iaculis ultricies imperdiet. Aliquam ullamcorper faucibus ante ac aliquet.</p>
           </div>
 
-          <div></div>
-
-          <div class="descLine rounded"></div>
+          <div class="descLineRight rounded anim" #animatedElement data-animation="2" data-delay="0s"></div>
 
         </div>
 
@@ -47,15 +45,19 @@
         <div class="col-4" [ngClass]="{'description-left': even , 'description-right': odd}">
 
           <div class="description text-center pl-xl-3 pr-xl-1">
-            <p class="pl-xl-5 anim" #animatedElement data-delay="0s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in rhoncus nibh. Curabitur rhoncus massa diam. Proin egestas libero sit amet leo semper, a sollicitudin quam sodales. Sed iaculis ultricies imperdiet. Aliquam ullamcorper faucibus ante ac aliquet.</p>
+            <p class="pl-xl-5 anim" #animatedElement data-animation="1" data-delay="0s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in rhoncus nibh. Curabitur rhoncus massa diam. Proin egestas libero sit amet leo semper, a sollicitudin quam sodales. Sed iaculis ultricies imperdiet. Aliquam ullamcorper faucibus ante ac aliquet.</p>
           </div>
+
+          <div class="descLineLeft rounded anim" #animatedElement data-animation="2" data-delay=".1s"></div>
 
         </div>
 
         <div class="col-2"></div>
 
         <div class="col-3 col-xl-2 d-flex justify-content-center">
-          <a href="https://positiveperson.github.io/To-Do-List/" #animatedElement class="anim" data-delay=".3s"><img src="../../assets/imgs/{{project.img}}" round/></a>
+          <div class="imgLineRight rounded anim" #animatedElement data-animation="2" data-delay=".4s"></div>
+
+          <a href="https://positiveperson.github.io/To-Do-List/" #animatedElement class="anim" data-animation="1" data-delay=".3s"><img src="../../assets/imgs/{{project.img}}" round/></a>
         </div>
 
         <div class="col-1 col-xl-2"></div>

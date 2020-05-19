@@ -106,7 +106,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
                   // console.log( entry.target );
 
                     //@ts-ignore
-                    entry.target.style.animation = `anim1 2s ${entry.target.dataset.delay} forwards ease-out`;
+                    entry.target.style.animation = `anim${entry.target.dataset.animation} 2s ${entry.target.dataset.delay} forwards ease-out`;
                     // console.log("indeed intersectionRatio is: " + entry.intersectionRatio);
                   }
                 else {
