@@ -17,7 +17,7 @@ import * as $ from 'jquery';
 import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
 import { TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
-import { ProjectService } from '../project.service';
+import { ProjectService } from './project.service';
 
 
 // ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
@@ -49,7 +49,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
     tl.from(".projectHr", .5, {x:500, opacity: 0.3});
 
-    const scene = new ScrollMagic.Scene({
+    const scene2 = new ScrollMagic.Scene({
       triggerElement: ".sticky",
                 triggerHook: "onLeave",
                 duration: "100%"

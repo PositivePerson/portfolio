@@ -8,6 +8,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutmeComponent } from './aboutme/aboutme.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FooterComponent } from './footer/footer.component';
+import { CertificatesComponent } from './certificates/certificates.component';
 
 // import { setTheme } from 'ngx-bootstrap/utils';
 
@@ -18,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
     WelcomeComponent,
     AboutmeComponent,
     ProjectsComponent,
-    FooterComponent
+    FooterComponent,
+    CertificatesComponent
   ],
   imports: [
     BrowserModule,

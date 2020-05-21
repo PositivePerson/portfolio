@@ -59,7 +59,7 @@ export class AboutmeComponent implements OnInit {
     tlAbout.from("#nextPage i", 1, {opacity: 0}, "=-2");
     tlAbout.to("#nextPage i", 1, {opacity: 1});
 
-    const scene = new ScrollMagic.Scene({
+    const scene1 = new ScrollMagic.Scene({
       triggerElement: "#secondSection",
       // triggerHook: "onEnter",
       // duration: "100%",
