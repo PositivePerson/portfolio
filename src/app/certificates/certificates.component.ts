@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, QueryList, ElementRef, ViewChildren } from '@angular/core';
 
 import { Certificate } from '../certificatesData/certificate-template';
 import { CertificateService } from './certificate.service';
@@ -21,6 +21,8 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
     this.certificates = certificateService.getCertificates();
    }
 
+   @ViewChildren('certificate' )  certificatesElements: QueryList<ElementRef>;
+
   ngOnInit(): void {
     console.log("certificates: ", this.certificates);
 
@@ -30,35 +32,47 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
 
+    var certificatesArray = this.certificatesElements.toArray();
+
     //                     animation
     var tlCertificate = new TimelineMax({onUpdate:updatePercentage});
     const controller = new ScrollMagic.Controller();
 
-    tlCertificate.from(`#numba1`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba2`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba3`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba4`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba5`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba6`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba7`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba8`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba9`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba10`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba11`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba12`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba13`, 1, {x:-200, opacity: 0}, "=.1");
-    tlCertificate.from(`#numba14`, 1, {x:-200, opacity: 0}, "=.1");
 
+    console.log( "certificatesElements: ", this.certificatesElements );
+    console.log( "certificatesArray: ", certificatesArray );
 
-    const scene3 = new ScrollMagic.Scene({
-      triggerElement: "#certificatesSection",
-      triggerHook: 0.8,
-      duration: "90%",
-      // offset: "-10%"
+    certificatesArray.forEach((cert) => {
+        console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
+
+        tlCertificate.from(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
+
+        var scene3 = new ScrollMagic.Scene({
+          triggerElement: `#${cert.nativeElement.attributes.id.nodeValue}`,
+          triggerHook: 0.1,
+          duration: "100%",
+          // offset: "-20%"
+        })
+          // .setPin("#certificatesSection")
+          .setTween(tlCertificate)
+            .addTo(controller);
     })
-      // .setPin("#certificatesSection")
-      .setTween(tlCertificate)
-        .addTo(controller);
+
+    certificatesArray.forEach((cert) => {
+        console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
+
+        tlCertificate.to(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
+
+        var scene3 = new ScrollMagic.Scene({
+          triggerElement: `#${cert.nativeElement.attributes.id.nodeValue}`,
+          triggerHook: 1,
+          duration: "80%",
+          offset: "-20%"
+        })
+          // .setPin("#certificatesSection")
+          .setTween(tlCertificate)
+            .addTo(controller);
+    })
 
     function updatePercentage() {
       tlCertificate.progress();
