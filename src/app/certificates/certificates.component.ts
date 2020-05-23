@@ -5,9 +5,21 @@ import { CertificateService } from './certificate.service';
 
 import * as $ from 'jquery';
 
-import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
-import { TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
+// import "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
+// import "scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js";
+
+// declare var ScrollMagic: any;
+
+import { TweenLite, TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+
+import * as ScrollMagic from "scrollmagic-with-ssr"; // Or use scrollmagic-with-ssr to avoid server rendering problems
+
+import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+
+// import "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
+
+// declare var ScrollMagic: any;
 
 @Component({
   selector: 'app-certificates',
@@ -42,35 +54,47 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
     console.log( "certificatesElements: ", this.certificatesElements );
     console.log( "certificatesArray: ", certificatesArray );
 
+    // certificatesArray.forEach((cert) => {
+    //     console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
+
+    //     tlCertificate.from(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
+
+    //     var scene3 = new ScrollMagic.Scene({
+    //       triggerElement: "#certificatesSection",
+    //       triggerHook: 1,
+    //       duration: "100%",
+    //       // offset: "-20%"
+    //     })
+    //       // .setPin("#certificatesSection")
+    //       .setTween(tlCertificate)
+    //       .addIndicators({
+    //         colorTrigger: "white",
+    //         indent: 100,
+    //         colorStart: "pink"
+    //       })
+    //         .addTo(controller);
+    // })
+
     certificatesArray.forEach((cert) => {
-        console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
-
-        tlCertificate.from(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
-
-        var scene3 = new ScrollMagic.Scene({
-          triggerElement: `#${cert.nativeElement.attributes.id.nodeValue}`,
-          triggerHook: 0.1,
-          duration: "100%",
-          // offset: "-20%"
-        })
-          // .setPin("#certificatesSection")
-          .setTween(tlCertificate)
-            .addTo(controller);
-    })
-
-    certificatesArray.forEach((cert) => {
+        console.log("cert: ", cert);
         console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
 
         tlCertificate.to(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
 
         var scene3 = new ScrollMagic.Scene({
-          triggerElement: `#${cert.nativeElement.attributes.id.nodeValue}`,
-          triggerHook: 1,
-          duration: "80%",
-          offset: "-20%"
+          // triggerElement: cert.nativeElement,
+          triggerElement: "#certificatesSection",
+          triggerHook: 0.01,
+          duration: "50%",
+          // offset: "-100%"
         })
           // .setPin("#certificatesSection")
           .setTween(tlCertificate)
+          .addIndicators({
+            colorTrigger: "white",
+            indent: 100,
+            colorStart: "pink"
+          })
             .addTo(controller);
     })
 
