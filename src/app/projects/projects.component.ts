@@ -54,7 +54,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
                 triggerHook: "onLeave",
                 duration: "100%"
     })
-      .setPin("sticky")
+      // .setPin(".sticky")
       .setTween(tl)
         .addTo(controller);
 

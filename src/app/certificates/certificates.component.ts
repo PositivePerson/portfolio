@@ -48,45 +48,22 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
 
     //                     animation
     var tlCertificate = new TimelineMax({onUpdate:updatePercentage});
-    const controller = new ScrollMagic.Controller();
+    let controller = new ScrollMagic.Controller();
 
 
     console.log( "certificatesElements: ", this.certificatesElements );
     console.log( "certificatesArray: ", certificatesArray );
 
-    // certificatesArray.forEach((cert) => {
-    //     console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
-
-    //     tlCertificate.from(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
-
-    //     var scene3 = new ScrollMagic.Scene({
-    //       triggerElement: "#certificatesSection",
-    //       triggerHook: 1,
-    //       duration: "100%",
-    //       // offset: "-20%"
-    //     })
-    //       // .setPin("#certificatesSection")
-    //       .setTween(tlCertificate)
-    //       .addIndicators({
-    //         colorTrigger: "white",
-    //         indent: 100,
-    //         colorStart: "pink"
-    //       })
-    //         .addTo(controller);
-    // })
-
     certificatesArray.forEach((cert) => {
-        console.log("cert: ", cert);
         console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
 
-        tlCertificate.to(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
+        tlCertificate.from(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
 
         var scene3 = new ScrollMagic.Scene({
-          // triggerElement: cert.nativeElement,
-          triggerElement: "#certificatesSection",
-          triggerHook: 0.01,
-          duration: "50%",
-          // offset: "-100%"
+          triggerElement: cert.nativeElement,
+          triggerHook: 0.9,
+          duration: "10%",
+          // offset: "-20%"
         })
           // .setPin("#certificatesSection")
           .setTween(tlCertificate)
@@ -97,6 +74,29 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
           })
             .addTo(controller);
     })
+
+    // certificatesArray.forEach((cert) => {
+    //     console.log("cert: ", cert);
+    //     console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
+
+    //     tlCertificate.to(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
+
+    //     var scene3 = new ScrollMagic.Scene({
+    //       // triggerElement: cert.nativeElement,
+    //       triggerElement: cert.nativeElement,
+    //       triggerHook: 0.9,
+    //       duration: "90%",
+    //       // offset: "-100%"
+    //     })
+    //       // .setPin("#certificatesSection")
+    //       .setTween(tlCertificate)
+    //       .addIndicators({
+    //         colorTrigger: "white",
+    //         indent: 100,
+    //         colorStart: "pink"
+    //       })
+    //         .addTo(controller);
+    // })
 
     function updatePercentage() {
       tlCertificate.progress();
