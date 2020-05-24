@@ -3,13 +3,10 @@
 }
 
 #arrowSection {
-  /* height: 50em; */
   height: calc(100vh - 2em);
 }
 
 #targetArrow {
-  /* background: brown; */
-
   font-size: 4em;
 }
 

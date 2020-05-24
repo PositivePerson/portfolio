@@ -180,6 +180,7 @@ hr:last-of-type {
   background: rgb(237, 235, 216);
   left: 1em;
   /* z-index: 5; */
+  margin-top: 5.5em;
 }
 
 .descLineLeft {
@@ -189,6 +190,13 @@ hr:last-of-type {
   background: rgb(237, 235, 216);
   left: 5em;
   /* z-index: 5; */
+}
+
+.showToolsButtonDiv {
+  position: absolute;
+  text-align: center;
+  padding-top: 4em;
+  margin-left: -2em;
 }
 
 .turnArrowUp i {

@@ -42,26 +42,26 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
 
-    //------------------------------------
-    //            controlled animation
-    var tl = new TimelineMax({onUpdate:updatePercentage});
-    const controller = new ScrollMagic.Controller();
+    // //------------------------------------
+    // //            controlled animation
+    // var tl = new TimelineMax({onUpdate:updatePercentage});
+    // const controller = new ScrollMagic.Controller();
 
-    tl.from(".projectHr", .5, {x:500, opacity: 0.3});
+    // tl.from(".projectHr", .5, {x:500, opacity: 0.3});
 
-    const scene2 = new ScrollMagic.Scene({
-      triggerElement: ".sticky",
-                triggerHook: "onLeave",
-                duration: "100%"
-    })
-      // .setPin(".sticky")
-      .setTween(tl)
-        .addTo(controller);
+    // const scene2 = new ScrollMagic.Scene({
+    //   triggerElement: ".sticky",
+    //             triggerHook: "onLeave",
+    //             duration: "100%"
+    // })
+    //   // .setPin(".sticky")
+    //   .setTween(tl)
+    //     .addTo(controller);
 
-    function updatePercentage() {
-      tl.progress();
-      // console.log(tl.progress());
-    }
+    // function updatePercentage() {
+    //   tl.progress();
+    //   // console.log(tl.progress());
+    // }
 
 
 

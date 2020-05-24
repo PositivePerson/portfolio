@@ -49,5 +49,9 @@ a.nav-link {
 	font-size: 1.6em;
 	padding-right: 1em;
 	padding-left: 1em;
-	margin: 0;
+  margin: 0;
+}
+
+#goToMainWelcome i {
+  cursor: pointer;
 }

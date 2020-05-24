@@ -10,7 +10,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { FooterComponent } from './footer/footer.component';
 import { CertificatesComponent } from './certificates/certificates.component';
 import { ArrowsComponent } from './arrows/arrows.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatButtonModule} from '@angular/material/button';
 // import { setTheme } from 'ngx-bootstrap/utils';
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ArrowsComponent } from './arrows/arrows.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

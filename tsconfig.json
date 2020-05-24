@@ -23,6 +23,7 @@
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
 
+    "importHelpers": true,
     "debug": true,
     "angularCompilerOptions": { "enableIvy": false }
   }
