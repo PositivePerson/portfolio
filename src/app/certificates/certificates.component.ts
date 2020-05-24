@@ -59,14 +59,15 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
 
         console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
 
-        tlCertificate.from(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
+        tlCertificate.from(`#${cert.nativeElement.attributes.id.nodeValue}`, 0.3, {x:-200, opacity: 0})
+                     .to(`#${cert.nativeElement.attributes.id.nodeValue}`, 0.3, {x:-200, opacity: 0}, 2);
 
         console.log("cert.nativeElement: ", cert.nativeElement);
 
         var certScene3 = new ScrollMagic.Scene({
           triggerElement: `#${cert.nativeElement.attributes.id.nodeValue}`,
-          triggerHook: 0.9,
-          duration: "60%",
+          triggerHook: 0.98,
+          duration: "100%",
           // offset: "-20%"
         })
           // .setPin("#certificatesSection")
@@ -79,10 +80,10 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
           })
             .addTo(controller);
 
-            function updatePercentage() {
-              tlCertificate.progress();
-              console.log(tlCertificate.progress());
-            }
+            // function updatePercentage() {
+            //   tlCertificate.progress();
+            //   console.log(tlCertificate.progress());
+            // }
     })
 
     // certificatesArray.forEach((cert) => {
