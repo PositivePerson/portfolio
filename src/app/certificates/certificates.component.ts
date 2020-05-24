@@ -13,7 +13,7 @@ import * as $ from 'jquery';
 import { TweenLite, TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
-import * as ScrollMagic from "scrollmagic-with-ssr"; // Or use scrollmagic-with-ssr to avoid server rendering problems
+import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
 
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 
@@ -47,7 +47,7 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
     var certificatesArray = this.certificatesElements.toArray();
 
     //                     animation
-    var tlCertificate = new TimelineMax({onUpdate:updatePercentage});
+
     let controller = new ScrollMagic.Controller();
 
 
@@ -55,14 +55,18 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
     console.log( "certificatesArray: ", certificatesArray );
 
     certificatesArray.forEach((cert) => {
+        var tlCertificate = new TimelineMax();
+
         console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
 
         tlCertificate.from(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
 
-        var scene3 = new ScrollMagic.Scene({
-          triggerElement: cert.nativeElement,
+        console.log("cert.nativeElement: ", cert.nativeElement);
+
+        var certScene3 = new ScrollMagic.Scene({
+          triggerElement: `#${cert.nativeElement.attributes.id.nodeValue}`,
           triggerHook: 0.9,
-          duration: "10%",
+          duration: "60%",
           // offset: "-20%"
         })
           // .setPin("#certificatesSection")
@@ -70,9 +74,15 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
           .addIndicators({
             colorTrigger: "white",
             indent: 100,
-            colorStart: "pink"
+            colorStart: "pink",
+            colorEnd: "#42f5e3"
           })
             .addTo(controller);
+
+            function updatePercentage() {
+              tlCertificate.progress();
+              console.log(tlCertificate.progress());
+            }
     })
 
     // certificatesArray.forEach((cert) => {
@@ -98,10 +108,7 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
     //         .addTo(controller);
     // })
 
-    function updatePercentage() {
-      tlCertificate.progress();
-      console.log(tlCertificate.progress());
-    }
+
   }
 
 
