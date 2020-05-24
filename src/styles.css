@@ -11,8 +11,13 @@ body {
   /* rgb(231, 209, 231); */
 }
 
+.darkMode {
+  background-color: #28272b;
+}
+
 html {
   overflow-y: scroll;
+  transition: background .35s ease-out;
   /* overflow-x: hidden; */
 }
 

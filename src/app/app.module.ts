@@ -9,6 +9,7 @@ import { AboutmeComponent } from './aboutme/aboutme.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FooterComponent } from './footer/footer.component';
 import { CertificatesComponent } from './certificates/certificates.component';
+import { ArrowsComponent } from './arrows/arrows.component';
 
 // import { setTheme } from 'ngx-bootstrap/utils';
 
@@ -20,7 +21,8 @@ import { CertificatesComponent } from './certificates/certificates.component';
     AboutmeComponent,
     ProjectsComponent,
     FooterComponent,
-    CertificatesComponent
+    CertificatesComponent,
+    ArrowsComponent
   ],
   imports: [
     BrowserModule,

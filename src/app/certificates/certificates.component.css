@@ -1,6 +1,19 @@
 
 #certificatesSection {
+  /* margin-top: -2em; */
+
+  /* background: url("../../assets/imgs/bck5.jpg") no-repeat;
+  background-size: cover;
+  -moz-box-shadow:  rgba(49, 46, 55,0.7);
+  -webkit-box-shadow:  rgba(49, 46, 55,0.7);
+  box-shadow:  rgba(49, 46, 55,0.7); */
+  /* background: #28272b; */
+
   font-size: 1.3em;
+}
+
+.row {
+  /* background: rgba(49, 46, 55,0.7); */
 }
 
 /* .certificate {

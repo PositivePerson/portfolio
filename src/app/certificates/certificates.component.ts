@@ -8,14 +8,20 @@ import * as $ from 'jquery';
 // import "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
 // import "scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js";
 
+
 // declare var ScrollMagic: any;
+import MotionPathPlugin from "gsap";
+import TextPlugin from "gsap";
 
 import { TweenLite, TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
+
+
 import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to avoid server rendering problems
 
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
+// import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js';
 
 // import "scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators";
 
@@ -29,6 +35,8 @@ import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugin
 export class CertificatesComponent implements OnInit, AfterViewInit {
   certificates: Certificate[];
 
+  private certObserver: IntersectionObserver;
+
   constructor( certificateService: CertificateService) {
     this.certificates = certificateService.getCertificates();
    }
@@ -38,6 +46,7 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     console.log("certificates: ", this.certificates);
 
+    gsap.registerPlugin(MotionPathPlugin, TextPlugin);
   }
 
   ngAfterViewInit(): void {
@@ -47,9 +56,7 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
     var certificatesArray = this.certificatesElements.toArray();
 
     //                     animation
-
     let controller = new ScrollMagic.Controller();
-
 
     console.log( "certificatesElements: ", this.certificatesElements );
     console.log( "certificatesArray: ", certificatesArray );
@@ -59,8 +66,8 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
 
         console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
 
-        tlCertificate.from(`#${cert.nativeElement.attributes.id.nodeValue}`, 0.3, {x:-200, opacity: 0})
-                     .to(`#${cert.nativeElement.attributes.id.nodeValue}`, 0.3, {x:-200, opacity: 0}, 2);
+        tlCertificate.from(`#${cert.nativeElement.attributes.id.nodeValue}`, 0.25, {x:-200, opacity: 0})
+                     .to(`#${cert.nativeElement.attributes.id.nodeValue}`, 0.25, {x:-200, opacity: 0}, 2);
 
         console.log("cert.nativeElement: ", cert.nativeElement);
 
@@ -79,37 +86,36 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
             colorEnd: "#42f5e3"
           })
             .addTo(controller);
-
-            // function updatePercentage() {
-            //   tlCertificate.progress();
-            //   console.log(tlCertificate.progress());
-            // }
+          // function updatePercentage() {
+          //   tlCertificate.progress();
+          //   console.log(tlCertificate.progress());
+          // }
     })
 
-    // certificatesArray.forEach((cert) => {
-    //     console.log("cert: ", cert);
-    //     console.log("cert.nativeElement.attributes.id.nodeValue", cert.nativeElement.attributes.id.nodeValue);
 
-    //     tlCertificate.to(`#${cert.nativeElement.attributes.id.nodeValue}`, 1, {x:-200, opacity: 0});
+    //       change background-color & nav-color  on scroll
+    var firstExecution = true;
+    this.certObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
 
-    //     var scene3 = new ScrollMagic.Scene({
-    //       // triggerElement: cert.nativeElement,
-    //       triggerElement: cert.nativeElement,
-    //       triggerHook: 0.9,
-    //       duration: "90%",
-    //       // offset: "-100%"
-    //     })
-    //       // .setPin("#certificatesSection")
-    //       .setTween(tlCertificate)
-    //       .addIndicators({
-    //         colorTrigger: "white",
-    //         indent: 100,
-    //         colorStart: "pink"
-    //       })
-    //         .addTo(controller);
-    // })
+          if(entry.isIntersecting){
+            console.log("YES IT IS: ", entry.intersectionRatio);
+            $("html").addClass("darkMode");
+            $("#navbar").addClass("scrolled").removeClass("scrolledLower");
+          }
+          else if(!entry.isIntersecting && !firstExecution) {
+            $("html").removeClass("darkMode");
+            $("#navbar").addClass("scrolledLower").removeClass("scrolled");
+          }
+          else {
+            firstExecution = false;
+          }
 
+      })
+    })
 
+    this.certObserver.observe( document.querySelector("#certificatesSection") as HTMLElement);
+    // console.log("document.querySelector('#certificatesSection')", document.querySelector("#certificatesSection"));
   }
 
 

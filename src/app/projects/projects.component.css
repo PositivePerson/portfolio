@@ -11,6 +11,10 @@ hr {
   background: rgba(40, 39, 43, 0.7);
 }
 
+hr:last-of-type {
+  display: none;
+}
+
 .projects a {
 	cursor: default;
 }
