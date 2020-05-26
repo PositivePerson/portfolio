@@ -19,6 +19,9 @@ import { TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLi
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import { ProjectService } from './project.service';
 
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { ToolsSnackBarComponent } from './tools-snack-bar/tools-snack-bar.component';
+
 
 // ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
@@ -30,12 +33,18 @@ import { ProjectService } from './project.service';
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: Project[];
-
+  durationInSeconds = 5;
   private projectObserver: IntersectionObserver;
 
-  constructor( projectService: ProjectService) {
+  constructor( projectService: ProjectService, private _snackBar: MatSnackBar) {
     this.projects = projectService.getProjects();
    }
+
+   openSnackBar() {
+    this._snackBar.openFromComponent(ToolsSnackBarComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
+  }
 
   @ViewChildren('animatedElement' )  animatedElements: QueryList<ElementRef>;
   // @ViewChildren('animatedElement' )  animatedElements: ElementRef;
