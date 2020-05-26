@@ -8,6 +8,12 @@
 
       <div class="row align-items-center projects" *ngIf="odd">
 
+        <div class="specificProjectDescription w-100 collapse" id="collapseExample">
+          <div class="card card-body">
+            hello
+          </div>
+        </div>
+
         <div class="col-1 col-xl-2"></div>
 
         <!-- <div data-scroll="addHeight"> -->
@@ -28,7 +34,7 @@
 
           <!-- <div class="descLineRight rounded anim w-80" #animatedElement data-animation="2" data-delay="0s"></div> -->
           <div class="showToolsButtonDiv w-100" #animatedElement data-animation="2" data-delay="0s">
-            <button mat-stroked-button color="primary" class="showToolsButton">Tools</button>
+            <button mat-stroked-button color="primary" (click)="openSnackBar()" aria-label="Show an example snack-bar" class="showToolsButton">Tools</button>
           </div>
 
         </div>
@@ -69,7 +75,9 @@
 
       <!-- ---------------------------------- ODD & EVEN----------------------------------------- -->
 
-      <div class="expandDesc">
+      <!-- endOdExpand -->
+
+      <!-- <div class="expandDesc">
 
         <div class="projectInfo">
           <i class="fas fa-chevron-down"></i>
@@ -112,43 +120,15 @@
               </div>
             </div>
 
-            <!-- <div *ngFor="let tool of project.tools; let i = index">
-
-              <div class="row">
-                <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[i]}}</span></div>
-                <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[i]}}</span></div>
-                <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[i]}}</span></div>
-              </div>
-
-            </div> -->
-
-
           </div>
-
-          <!-- <div class="col-3">
-            <ul>
-              <li><i class="fas fa-clipboard-check"></i><span> Javascript</span></li>
-              <li><i class="fas fa-clipboard-check"></i><span> Jquery</span></li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <ul>
-              <li><i class="fas fa-clipboard-check"></i><span> </span></li>
-              <li><i class="fas fa-clipboard-check"></i><span>CSS</span></li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <ul>
-              <li><i class="fas fa-clipboard-check"></i><span>Bootstrap</span></li>
-              <li><i class="fas fa-clipboard-check"></i><span>Semantic</span></li>
-            </ul>
-          </div> -->
 
           <div class="col-1" *ngIf="odd"></div>
           <div class="col-1" *ngIf="even"></div>
         </div>
 
-      </div>
+      </div> -->
+
+      <!-- endOdExpand -->
 
       <!-- <hr class="projectHr"> -->
 

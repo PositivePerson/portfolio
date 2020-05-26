@@ -13,6 +13,8 @@ import { ArrowsComponent } from './arrows/arrows.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule } from '@angular/material/snack-bar';
+import { ToolsSnackBarComponent } from './projects/tools-snack-bar/tools-snack-bar.component';
 // import { setTheme } from 'ngx-bootstrap/utils';
 
 @NgModule({
@@ -24,13 +26,15 @@ import {MatButtonModule} from '@angular/material/button';
     ProjectsComponent,
     FooterComponent,
     CertificatesComponent,
-    ArrowsComponent
+    ArrowsComponent,
+    ToolsSnackBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

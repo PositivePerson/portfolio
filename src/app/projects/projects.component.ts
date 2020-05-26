@@ -18,7 +18,8 @@ import * as ScrollMagic from "scrollmagic"; // Or use scrollmagic-with-ssr to av
 import { TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLite and TimelineLite
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import { ProjectService } from './project.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToolsSnackBarComponent } from './tools-snack-bar/tools-snack-bar.component';
 
 // ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
@@ -31,10 +32,17 @@ import { ProjectService } from './project.service';
 export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: Project[];
 
+  durationInSeconds = 2;
   private projectObserver: IntersectionObserver;
 
-  constructor( projectService: ProjectService) {
+  constructor( projectService: ProjectService, private _snackBar: MatSnackBar) {
     this.projects = projectService.getProjects();
+   }
+
+   openSnackBar() {
+     this._snackBar.openFromComponent(ToolsSnackBarComponent, {
+       duration: this.durationInSeconds * 1000,
+     });
    }
 
   @ViewChildren('animatedElement' )  animatedElements: QueryList<ElementRef>;
@@ -88,6 +96,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     // this.animatedElements.forEach((directive, index) => { console.log(index); console.log(directive); })
 
 
+
     //------------------------------------
     //            uncontrolled animation
     // const projectPageElements = document.querySelectorAll('.anim');
@@ -122,6 +131,11 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
         })
 
 
+        // //---------------toggle project tools-----------
+        // function toggleToolsBox() {
+        //   (<any>$('#collapseExample')).collapse('toggle');
+        //   console.log("should be toggled");
+        // }
 
   }
 
