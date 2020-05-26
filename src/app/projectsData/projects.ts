@@ -29,7 +29,8 @@ export const PROJECTS: Project[] = [
         "Bootstrap",
         "Semantic",
         "Angular"
-      ]
+      ],
+    prColor: "#2d221e"
   },
   {
     id: 2,
@@ -59,7 +60,8 @@ export const PROJECTS: Project[] = [
         "Bootstrap",
         "Semantic",
         "MongoDB"
-      ]
+      ],
+    prColor: "#8398b9"
   },
   {
     id: 3,
@@ -86,7 +88,8 @@ export const PROJECTS: Project[] = [
         "jQuery",
         "HTML",
         "CSS"
-      ]
+      ],
+    prColor: "#31b0ad"
   },
   {
     id: 4,
@@ -112,7 +115,8 @@ export const PROJECTS: Project[] = [
         "HTML",
         "CSS",
         "Bootstrap"
-      ]
+      ],
+    prColor: "#dfd4e0"
   },
   {
     id: 5,
@@ -139,6 +143,7 @@ export const PROJECTS: Project[] = [
         "jQuery",
         "HTML",
         "CSS"
-      ]
+      ],
+    prColor: "#333"
   }
 ]

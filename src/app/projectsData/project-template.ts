@@ -4,7 +4,7 @@ export interface Project {
   img: string,
   link: string,
   description: string,
-  tools: Array<string>
+  tools: Array<string>,
     // {
     //   Javascript: boolean,
     //   jQuery: boolean,
@@ -18,4 +18,5 @@ export interface Project {
     //   Hawler: boolean,
     //   PaperScript: boolean
     // }
+  prColor: string
 }
