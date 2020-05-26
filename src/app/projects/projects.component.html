@@ -2,7 +2,7 @@
 
   <section class="sticky">
 
-    <div *ngFor="let project of projects; let even = even; let odd = odd;">
+    <div *ngFor="let project of projects; let even = even; let odd = odd; let isLast = last">
 
       <!-- ---------------------------------- EVEN ---------------------------------------------- -->
 
@@ -27,8 +27,8 @@
           </div>
 
           <!-- <div class="descLineRight rounded anim w-80" #animatedElement data-animation="2" data-delay="0s"></div> -->
-          <div class="showToolsButtonDiv w-100" #animatedElement data-animation="2" data-delay="0s">
-            <button mat-stroked-button color="primary" class="showToolsButton" (click)="openSnackBar()" aria-label="Show an example snack-bar">Tools</button>
+          <div class="showToolsButtonDivRight w-100" #animatedElement data-animation="2" data-delay="0s">
+            <button mat-stroked-button color="primary" class="showToolsButton" (click)="openSnackBar(project.id)" aria-label="Show tools used in project">Tools</button>
           </div>
 
         </div>
@@ -52,6 +52,9 @@
           </div>
 
           <!-- <div class="descLineLeft rounded anim" #animatedElement data-animation="2" data-delay=".1s"></div> -->
+          <div class="showToolsButtonDivLeft w-100" #animatedElement data-animation="2" data-delay="0s">
+            <button mat-stroked-button color="primary" class="showToolsButton" (click)="openSnackBar(project.id)" aria-label="Show tools used in project">Tools</button>
+          </div>
 
         </div>
 
@@ -69,13 +72,13 @@
 
       <!-- ---------------------------------- ODD & EVEN----------------------------------------- -->
 
-      <div class="expandDesc">
+      <div class="expandDesc" *ngIf=!isLast>
 
         <div class="projectInfo">
           <i class="fas fa-chevron-down"></i>
         </div>
 
-        <div class="row px-3 mx-auto specificProjectDescription">
+        <!-- <div class="row px-3 mx-auto specificProjectDescription">
           <div class="col-2" *ngIf="odd"></div>
           <div class="col-2" *ngIf="even"></div>
 
@@ -112,41 +115,11 @@
               </div>
             </div>
 
-            <!-- <div *ngFor="let tool of project.tools; let i = index">
-
-              <div class="row">
-                <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[i]}}</span></div>
-                <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[i]}}</span></div>
-                <div class="col-4"><i class="fas fa-clipboard-check"></i><span>{{project.tools[i]}}</span></div>
-              </div>
-
-            </div> -->
-
-
           </div>
-
-          <!-- <div class="col-3">
-            <ul>
-              <li><i class="fas fa-clipboard-check"></i><span> Javascript</span></li>
-              <li><i class="fas fa-clipboard-check"></i><span> Jquery</span></li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <ul>
-              <li><i class="fas fa-clipboard-check"></i><span> </span></li>
-              <li><i class="fas fa-clipboard-check"></i><span>CSS</span></li>
-            </ul>
-          </div>
-          <div class="col-3">
-            <ul>
-              <li><i class="fas fa-clipboard-check"></i><span>Bootstrap</span></li>
-              <li><i class="fas fa-clipboard-check"></i><span>Semantic</span></li>
-            </ul>
-          </div> -->
 
           <div class="col-1" *ngIf="odd"></div>
           <div class="col-1" *ngIf="even"></div>
-        </div>
+        </div> -->
 
       </div>
 

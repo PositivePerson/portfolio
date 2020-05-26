@@ -33,17 +33,22 @@ import { ToolsSnackBarComponent } from './tools-snack-bar/tools-snack-bar.compon
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: Project[];
-  durationInSeconds = 5;
+  durationInSeconds = 3;
   private projectObserver: IntersectionObserver;
 
   constructor( projectService: ProjectService, private _snackBar: MatSnackBar) {
     this.projects = projectService.getProjects();
    }
 
-   openSnackBar() {
-    this._snackBar.openFromComponent(ToolsSnackBarComponent, {
-      duration: this.durationInSeconds * 1000,
-    });
+   openSnackBar( idOfProject ) {
+     this._snackBar.openFromComponent(ToolsSnackBarComponent, {
+       duration: this.durationInSeconds * 1000,
+      //  horizontalPosition: "center",
+      //  verticalPosition: "top",
+       data: this.projects[ idOfProject -1].tools,
+      });
+      // console.log("it is " + idOfProject + " project in a row");
+      console.log( "just passed: " , this.projects[ idOfProject -1].tools , "to the next snackbar");
   }
 
   @ViewChildren('animatedElement' )  animatedElements: QueryList<ElementRef>;

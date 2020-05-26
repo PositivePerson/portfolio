@@ -192,11 +192,18 @@ hr:last-of-type {
   /* z-index: 5; */
 }
 
-.showToolsButtonDiv {
+.showToolsButtonDivRight {
   position: absolute;
   text-align: center;
   padding-top: 4em;
   margin-left: -2em;
+}
+
+.showToolsButtonDivLeft {
+  position: absolute;
+  text-align: center;
+  padding-top: 4em;
+  margin-left: 2em;
 }
 
 .turnArrowUp i {
