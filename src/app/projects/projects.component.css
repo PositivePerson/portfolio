@@ -84,8 +84,8 @@ hr:last-of-type {
 
   height: 100vh;
 
-  /* padding-top: 4.5em;
-  padding-bottom: 4.5em; */
+  padding-top: 4.5em;
+  padding-bottom: 4.5em;
 
   overflow: hidden;
 }
@@ -204,14 +204,6 @@ hr:last-of-type {
 }
 
 .specificProjectDescription {
-  position: absolute;
-  height: 2em;
-  background: #323133;
-
-  top: calc( (50vh - 12.5em - 2em)/2);
-}
-
-/* .specificProjectDescription {
 	margin-top: 0;
 	padding-top: 0;
 	font-size: 1.5em;
@@ -246,11 +238,13 @@ hr:last-of-type {
 .specificProjectDescription .col-3 li i {
 	font-size: 1.5em;
 	position: absolute;
+	/* margin-top: -6px; */
+	/* margin: 5px 5px 0px 0px; */
 }
 
 .specificProjectDescription .col-3 li span {
 	margin-left: 42px;
-} */
+}
 
 /* scrolltrigger */
 .visible, .invisible {
