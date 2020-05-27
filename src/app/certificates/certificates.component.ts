@@ -30,7 +30,7 @@ import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugin
 @Component({
   selector: 'app-certificates',
   templateUrl: './certificates.component.html',
-  styleUrls: ['./certificates.component.css']
+  styleUrls: ['./certificates.component.scss']
 })
 export class CertificatesComponent implements OnInit, AfterViewInit {
   certificates: Certificate[];

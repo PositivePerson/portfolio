@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-arrows',
   templateUrl: './arrows.component.html',
-  styleUrls: ['./arrows.component.css']
+  styleUrls: ['./arrows.component.scss']
 })
 export class ArrowsComponent implements OnInit {
 

@@ -4,7 +4,7 @@ import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-tools-snack-bar',
   templateUrl: './tools-snack-bar.component.html',
-  styleUrls: ['./tools-snack-bar.component.css']
+  styleUrls: ['./tools-snack-bar.component.scss']
 })
 export class ToolsSnackBarComponent implements OnInit {
   toolsInSnackBar = [];

@@ -28,7 +28,7 @@ import { ToolsSnackBarComponent } from './tools-snack-bar/tools-snack-bar.compon
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css'],
+  styleUrls: ['./projects.component.scss'],
   // encapsulation: ViewEncapsulation.None
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
