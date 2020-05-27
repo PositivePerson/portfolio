@@ -7,14 +7,14 @@ body {
 	width: 100%;
 	margin: 0;
 	/*background-color: #332821;*/
-	background-color: rgb(49, 46, 55);
-	color: rgb(237, 235, 216) !important;
+	background-color: var(--light-bg-color);
+	color: var(--default-letters) !important;
 	/* 228, 203, 228 */
   /* rgb(231, 209, 231); */
 }
 
 .darkMode {
-  background-color: #28272b;
+  background-color: var(--dark-bg-color);
 }
 
 html {
@@ -25,7 +25,8 @@ html {
 
 app-root {
   font-size: 16px !important;
-  color: rgb(237, 235, 216) !important;
+  // color: rgb(237, 235, 216) !important;
+	color: var(--default-letters) !important;
 }
 
 .stop-scrolling {

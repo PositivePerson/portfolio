@@ -1,6 +1,6 @@
 
 nav a {
-	color: rgb(237, 235, 216);
+	color: var(--default-letters);
 }
 
 nav {
@@ -28,7 +28,7 @@ a.nav-link {
 }
 
 .navbar.scrolled {
-	background: #28272b ;
+	background: var(--dark-bg-color);
 	transition: background 500ms;
     box-shadow:
                 0 3px 5px -1px rgba(0, 0, 0, .2),
@@ -37,7 +37,7 @@ a.nav-link {
 }
 
 .navbar.scrolledLower {
-	background: rgb(49, 46, 55);
+	background: var(--light-bg-color);
 	transition: background 500ms;
     box-shadow:
                 0 3px 5px -1px rgba(0, 0, 0, .2),

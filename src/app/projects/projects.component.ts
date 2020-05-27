@@ -45,6 +45,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
        duration: this.durationInSeconds * 1000,
       //  horizontalPosition: "center",
       //  verticalPosition: "top",
+       panelClass: ['snackbar-background'],
        data: this.projects[ idOfProject -1].tools,
       });
       // console.log("it is " + idOfProject + " project in a row");
