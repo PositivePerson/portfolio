@@ -1,4 +1,4 @@
 .toolsBox {
-  color: #212121;
+  color: var(--color-success);
   /* font-size: 1.1em; */
 }
