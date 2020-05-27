@@ -1,24 +1,4 @@
 
-/* style scroll-animated things */
-section {
-  height: 100vh !important;
-  position: relative;
-
-  /* background: #28272b; */
-  background: var(--color-success);
-}
-
-p {
-  color: rgb(237, 235, 216);
-  font-family: 'Lobster', cursive;
-  font-size: 1.8em;
-	align-items: center;
-}
-
-img {
-  height: 15.5em;
-}
-
 #container {
   max-width: 75%;
   height: 100%;
@@ -52,3 +32,21 @@ img {
   font-size: 3em;
 }
 
+p {
+  color: rgb(237, 235, 216);
+  font-family: 'Lobster', cursive;
+  font-size: 1.8em;
+	align-items: center;
+}
+
+img {
+  height: 15.5em;
+}
+
+/* style scroll-animated things */
+section {
+  height: 100vh !important;
+  position: relative;
+
+  background: #28272b;
+}

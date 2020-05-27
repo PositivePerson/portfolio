@@ -253,11 +253,6 @@ hr:last-of-type {
 	margin-left: 42px;
 }
 
-::ng-deep .style-snackbar {
-  background: var(--color-primary);
-  /* background: #212121; */
-}
-
 /* scrolltrigger */
 .visible, .invisible {
   opacity: 0.0;
