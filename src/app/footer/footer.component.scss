@@ -3,3 +3,18 @@ footer .contact {
 	font-size: 2em;
 	padding-bottom: 0.05em;
 }
+
+button {
+  font-size: 1em;
+}
+
+.mat-icon-button {
+  width: 1.5em !important;
+  height: 1.5em !important;
+  line-height: 1.5em !important;
+}
+
+::ng-deep .tooltip-red {
+  background: var(--color-warn);
+  font-size: 0.85em;
+}
