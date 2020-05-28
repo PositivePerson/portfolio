@@ -1,4 +1,8 @@
 
+footer {
+  padding-bottom: 0.4em;
+}
+
 footer .contact {
 	font-size: 2em;
 	padding-bottom: 0.05em;
@@ -17,4 +21,23 @@ button {
 ::ng-deep .tooltip-red {
   background: var(--color-warn);
   font-size: 0.85em;
+}
+
+a:link {
+  color: var(--default-letters);
+}
+
+/* visited link */
+a:visited {
+  color: var(--default-letters);
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--default-letters);
+}
+
+/* selected link */
+a:active {
+  color: var(--default-letters);
 }

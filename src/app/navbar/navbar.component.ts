@@ -71,6 +71,18 @@ export class NavbarComponent implements OnInit {
         $('html, body').animate({scrollTop: 0}, 500);
         $("#navbar").addClass("scrolled").removeClass("scrolledLower");
       });
-  }
 
+      //smooth scroll when moving to another section by 'href'
+      $('a[href*="#"]').on('click', function(e) {
+        e.preventDefault()
+        $('html, body').animate(
+          {
+            scrollTop: $($(this).attr('href')).offset().top,
+          },
+          700,
+          'swing'
+        )
+      })
+
+  }
 }
