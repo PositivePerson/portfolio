@@ -1,0 +1,15 @@
+:host {
+  height: calc(100vh - 9em);
+  // background: blue;
+  display: block;
+}
+
+section {
+  height: 100%;
+  font-size: 4em;
+}
+
+p {
+  font-family: 'Lobster', cursive;
+  margin-bottom: 0.5em;
+}

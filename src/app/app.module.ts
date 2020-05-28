@@ -15,6 +15,7 @@ import { ToolsSnackBarComponent } from './projects/tools-snack-bar/tools-snack-b
 
 import { MatButtonModule} from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ContactMeComponent } from './contact-me/contact-me.component';
 
 // import { setTheme } from 'ngx-bootstrap/utils';
 
@@ -28,7 +29,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FooterComponent,
     CertificatesComponent,
     ArrowsComponent,
-    ToolsSnackBarComponent
+    ToolsSnackBarComponent,
+    ContactMeComponent
   ],
   imports: [
     BrowserModule,

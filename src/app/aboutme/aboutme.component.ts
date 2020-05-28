@@ -34,6 +34,7 @@ export class AboutmeComponent implements OnInit {
       }
       else if(entries[0].intersectionRatio <= 0 && !firstExecution) {
         $("#navbar").addClass("scrolledLower").removeClass("scrolled");
+        if($("html").hasClass("darkMode")) $("html").removeClass("darkMode");
       }
       else {
         // console.log(" 'firstExecution' is " + firstExecution);
