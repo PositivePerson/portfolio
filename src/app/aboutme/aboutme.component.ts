@@ -33,8 +33,8 @@ export class AboutmeComponent implements OnInit {
         $("#navbar").addClass("scrolled").removeClass("scrolledLower");
       }
       else if(entries[0].intersectionRatio <= 0 && !firstExecution) {
-        $("#navbar").addClass("scrolledLower").removeClass("scrolled");
         if($("html").hasClass("darkMode")) $("html").removeClass("darkMode");
+        $("#navbar").addClass("scrolledLower").removeClass("scrolled");
       }
       else {
         // console.log(" 'firstExecution' is " + firstExecution);
@@ -81,7 +81,9 @@ export class AboutmeComponent implements OnInit {
           scrollTop: $("app-projects").offset().top
       }, 1100, "swing");
 
-      $("#navbar").addClass("scrolledLower").removeClass("scrolled");
+      setTimeout( () => {
+        $("#navbar").addClass("scrolledLower").removeClass("scrolled");
+      }, 900);
 
       $(this).fadeTo(850, 0);
     });
