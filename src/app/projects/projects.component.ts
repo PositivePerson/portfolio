@@ -33,7 +33,7 @@ import { ToolsSnackBarComponent } from './tools-snack-bar/tools-snack-bar.compon
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: Project[];
-  durationInSeconds = 3;
+  durationInSeconds = 2.5;
   private projectObserver: IntersectionObserver;
 
   constructor( projectService: ProjectService, private _snackBar: MatSnackBar) {
@@ -48,12 +48,10 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
        panelClass: ['snackbar-background'],
        data: this.projects[ idOfProject -1].tools,
       });
-      // console.log("it is " + idOfProject + " project in a row");
       console.log( "just passed: " , this.projects[ idOfProject -1].tools , "to the next snackbar");
   }
 
   @ViewChildren('animatedElement' )  animatedElements: QueryList<ElementRef>;
-  // @ViewChildren('animatedElement' )  animatedElements: ElementRef;
 
   ngOnInit(): void {
 
@@ -84,14 +82,14 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    //Add 'implements AfterViewInit' to the class.
 
-    $(".specificProjectDescription, .projectInfo").mouseover(function() {
-      $(".projectInfo").addClass("turnArrowUp");
-    }).mouseout(function() {
-      $(".projectInfo").removeClass("turnArrowUp");
-    });
+    // $(".specificProjectDescription, .projectInfo").mouseover(function() {
+    //   $(".projectInfo").addClass("turnArrowUp");
+    // }).mouseout(function() {
+    //   $(".projectInfo").removeClass("turnArrowUp");
+    // });
+
+
 
     // this.animatedElements.changes.subscribe(c => {
     //   this.animatedElements.toArray().forEach((item) => {

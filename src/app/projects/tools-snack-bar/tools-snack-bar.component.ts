@@ -14,7 +14,7 @@ export class ToolsSnackBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("yes, number of project is: " + this.toolsInSnackBar);
+    console.log("snackBar received: " + this.toolsInSnackBar);
   }
 
   ngAfterViewInit(): void {

@@ -46,7 +46,7 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     console.log("certificates: ", this.certificates);
 
-    gsap.registerPlugin(MotionPathPlugin, TextPlugin);
+    // gsap.registerPlugin(MotionPathPlugin, TextPlugin);
   }
 
   ngAfterViewInit(): void {
@@ -79,12 +79,12 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
         })
           // .setPin("#certificatesSection")
           .setTween(tlCertificate)
-          .addIndicators({
-            colorTrigger: "white",
-            indent: 100,
-            colorStart: "pink",
-            colorEnd: "#42f5e3"
-          })
+          // .addIndicators({
+          //   colorTrigger: "white",
+          //   indent: 100,
+          //   colorStart: "pink",
+          //   colorEnd: "#42f5e3"
+          // })
             .addTo(controller);
           // function updatePercentage() {
           //   tlCertificate.progress();
@@ -99,7 +99,7 @@ export class CertificatesComponent implements OnInit, AfterViewInit {
       entries.forEach((entry) => {
 
           if(entry.isIntersecting){
-            console.log("YES IT IS: ", entry.intersectionRatio);
+            // console.log("on sertificates section: ", entry.intersectionRatio);
             $("html").addClass("darkMode");
             $("#navbar").addClass("scrolled").removeClass("scrolledLower");
           }

@@ -26,8 +26,8 @@ export class AboutmeComponent implements OnInit {
     const subPage = document.querySelector("#secondSection");
     const observer = new IntersectionObserver((entries) => {
 
-      console.log(entries);
-      console.log(entries[0].intersectionRatio);
+      // console.log(entries);
+      // console.log(entries[0].intersectionRatio);
 
       if(entries[0].intersectionRatio > 0) {
         $("#navbar").addClass("scrolled").removeClass("scrolledLower");
