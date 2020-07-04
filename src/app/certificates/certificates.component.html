@@ -2,8 +2,8 @@
   <div class="container-flex">
     <div class="w-100" *ngFor="let certificate of certificates">
       <div class="row w-100 my-5">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-9 pl-lg-5">
+        <div class="d-none d-xl-block col-xl-3"></div>
+        <div class="col-12 col-xl-9 pl-xl-5">
           <div class="certificate" id="numba{{certificate.id}}" #certificate>
             <p><span class="mx-3"><i class="far fa-star"></i></span>Course named {{certificate.name}} issued by {{certificate.website}} platform.</p>
           </div>

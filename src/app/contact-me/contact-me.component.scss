@@ -10,6 +10,26 @@ section {
 }
 
 p {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   margin-bottom: 0.5em;
+}
+
+// ------------------S M A L L ------------------
+@media (min-width: 576px) and (max-width: 767.98px) {
+  section {
+    font-size: 3.5em;
+  }
+}
+
+// ------------------ M E D I U M ------------------
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section {
+    font-size: 3.5em;
+  }
+}
+// ------------------ L A R G E ------------------
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  section {
+    font-size: 3.5em;
+  }
 }

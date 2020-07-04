@@ -1,79 +1,137 @@
 <section class="container-fluid" id="thirdSectiotn">
-
   <section class="sticky">
-
-    <div *ngFor="let project of projects; let even = even; let odd = odd; let isLast = last">
-
+    <div
+      *ngFor="
+        let project of projects;
+        let even = even;
+        let odd = odd;
+        let isLast = last
+      "
+    >
       <!-- ---------------------------------- EVEN ---------------------------------------------- -->
 
       <div class="row align-items-center projects" *ngIf="odd">
-
         <div class="col-1 col-xl-2"></div>
 
-          <div class="col-3 col-xl-2 d-flex justify-content-center">
-
-            <a href="https://fun-riding.herokuapp.com/" #animatedElement class="anim" data-animation="1" data-delay=".3s"><img src="../../assets/imgs/{{project.img}}" round/></a>
-          </div>
-
-        <div class="col-2"></div>
-
-        <div class="col-4" [ngClass]="{'description-left': even , 'description-right': odd}">
-
-          <div class="description text-center pl-xl-1 pr-xl-3">
-            <p class="pr-xl-5 anim" #animatedElement data-animation="1" data-delay=".1s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in rhoncus nibh. Curabitur rhoncus massa diam. Proin egestas libero sit amet leo semper, a sollicitudin quam sodales. Sed iaculis ultricies imperdiet. Aliquam ullamcorper faucibus ante ac aliquet.</p>
-          </div>
-
-          <div class="showToolsButtonDivRight w-100" #animatedElement data-animation="2" data-delay="0s">
-            <button mat-raised-button color="primary" class="showToolsButton" (click)="openSnackBar(project.id)" aria-label="Show tools used in project">Tools</button>
-          </div>
-
+        <div class="col-12 col-md-3 col-xl-2 d-flex justify-content-center">
+          <a
+            href="https://fun-riding.herokuapp.com/"
+            #animatedElement
+            class="anim"
+            data-animation="1"
+            data-delay=".3s"
+            ><img src="../../assets/imgs/{{ project.img }}" round
+          /></a>
         </div>
 
         <div class="col-2"></div>
 
+        <div
+          class="col-12 col-md-4"
+          [ngClass]="{ 'description-left': even, 'description-right': odd }"
+        >
+          <div class="description text-center pl-xl-1 pr-xl-3">
+            <p
+              class="pr-xl-5 anim"
+              #animatedElement
+              data-animation="1"
+              data-delay=".1s"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in
+              rhoncus nibh. Curabitur rhoncus massa diam. Proin egestas libero
+              sit amet leo semper, a sollicitudin quam sodales. Sed iaculis
+              ultricies imperdiet. Aliquam ullamcorper faucibus ante ac aliquet.
+            </p>
+          </div>
+
+          <div
+            class="showToolsButtonDivRight w-100"
+            #animatedElement
+            data-animation="2"
+            data-delay="0s"
+          >
+            <button
+              mat-raised-button
+              color="primary"
+              class="showToolsButton"
+              (click)="openSnackBar(project.id)"
+              aria-label="Show tools used in project"
+            >
+              Tools
+            </button>
+          </div>
+        </div>
+
+        <div class="col-2"></div>
       </div>
 
       <!-- ---------------------------------- ODD ---------------------------------------------- -->
 
-      <div class="row d-flex align-items-center projects" *ngIf="even">
-
+      <div
+        class="row d-flex flex-row-reverse flex-md-row align-items-center projects"
+        *ngIf="even"
+      >
         <div class="col-2"></div>
 
-        <div class="col-4" [ngClass]="{'description-left': even , 'description-right': odd}">
-
+        <div
+          class="col-12 col-md-4"
+          [ngClass]="{ 'description-left': even, 'description-right': odd }"
+        >
           <div class="description text-center pl-xl-3 pr-xl-1">
-            <p class="pl-xl-5 anim" #animatedElement data-animation="1" data-delay="0s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in rhoncus nibh. Curabitur rhoncus massa diam. Proin egestas libero sit amet leo semper, a sollicitudin quam sodales. Sed iaculis ultricies imperdiet. Aliquam ullamcorper faucibus ante ac aliquet.</p>
+            <p
+              class="pl-xl-5 anim"
+              #animatedElement
+              data-animation="1"
+              data-delay="0s"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in
+              rhoncus nibh. Curabitur rhoncus massa diam. Proin egestas libero
+              sit amet leo semper, a sollicitudin quam sodales. Sed iaculis
+              ultricies imperdiet. Aliquam ullamcorper faucibus ante ac aliquet.
+            </p>
           </div>
 
-          <div class="showToolsButtonDivLeft w-100" #animatedElement data-animation="2" data-delay="0s">
-            <button mat-raised-button color="primary" class="showToolsButton" (click)="openSnackBar(project.id)" aria-label="Show tools used in project">Tools</button>
+          <div
+            class="showToolsButtonDivLeft w-100"
+            #animatedElement
+            data-animation="2"
+            data-delay="0s"
+          >
+            <button
+              mat-raised-button
+              color="primary"
+              class="showToolsButton"
+              (click)="openSnackBar(project.id)"
+              aria-label="Show tools used in project"
+            >
+              Tools
+            </button>
           </div>
-
         </div>
 
         <div class="col-2"></div>
 
-        <div class="col-3 col-xl-2 d-flex justify-content-center">
-
-          <a href="https://positiveperson.github.io/To-Do-List/" #animatedElement class="anim" data-animation="1" data-delay=".3s"><img src="../../assets/imgs/{{project.img}}" round/></a>
+        <div class="col-12 col-md-3 col-xl-2 d-flex justify-content-center">
+          <a
+            href="https://positiveperson.github.io/To-Do-List/"
+            #animatedElement
+            class="anim"
+            data-animation="1"
+            data-delay=".3s"
+            ><img src="../../assets/imgs/{{ project.img }}" round
+          /></a>
         </div>
 
         <div class="col-1 col-xl-2"></div>
-
       </div>
 
       <!-- ---------------------------------- ODD & EVEN----------------------------------------- -->
 
-      <div class="expandDesc" *ngIf=!isLast>
-
+      <div class="expandDesc" *ngIf="!isLast">
         <div class="projectInfo">
           <i class="fas fa-chevron-down"></i>
         </div>
-
       </div>
-
     </div>
-
   </section>
-
 </section>

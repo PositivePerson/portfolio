@@ -1,15 +1,14 @@
-
 #container {
   max-width: 75%;
   height: 100%;
 }
 
 #About_me {
-	/* height: 15em; */
-	width: 100%;
-	justify-content: center;
-	/* padding-top: 25%; */
-	margin-left: 0;
+  /* height: 15em; */
+  width: 100%;
+  justify-content: center;
+  /* padding-top: 25%; */
+  margin-left: 0;
   z-index: 100;
 }
 
@@ -34,13 +33,18 @@
 
 p {
   color: var(--default-letters);
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   font-size: 1.8em;
-	align-items: center;
+  align-items: center;
 }
 
 img {
-  height: 15.5em;
+  // height: 15.5em;
+  width: 100%;
+  height: auto;
+
+  max-width: 15.5em;
+  max-height: 15.5em;
 }
 
 /* style scroll-animated things */
@@ -50,4 +54,36 @@ section {
 
   // background: #28272b;
   background: var(--dark-bg-color);
+}
+// ------------------S M A L L ------------------
+@media (min-width: 576px) and (max-width: 767.98px) {
+  P {
+    font-size: 1.35em;
+  }
+  #container {
+    max-width: 100%;
+  }
+}
+
+// ------------------ M E D I U M ------------------
+@media (min-width: 768px) and (max-width: 991.98px) {
+  P {
+    font-size: 1.5em;
+  }
+  #container {
+    max-width: 85%;
+  }
+  #secondSection {
+    overflow: hidden;
+  }
+}
+
+// ------------------ L A R G E ------------------
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  P {
+    font-size: 1.5em;
+  }
+  #container {
+    max-width: 80%;
+  }
 }
