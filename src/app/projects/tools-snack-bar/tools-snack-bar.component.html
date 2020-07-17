@@ -1,7 +1,10 @@
-
 <div class="toolsBox d-flex justify-content-around alternative">
-  <span class="tools" color="success" *ngFor="let tool of toolsInSnackBar ; last as isLast">
-    🚀{{tool}}
-    <span *ngIf=isLast>🚀</span>
+  <span
+    class="tools"
+    color="success"
+    *ngFor="let tool of toolsInSnackBar; last as isLast"
+  >
+    🚀{{ tool }}
+    <span *ngIf="isLast">🚀</span>
   </span>
 </div>

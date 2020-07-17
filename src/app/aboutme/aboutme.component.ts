@@ -29,11 +29,11 @@ export class AboutmeComponent implements OnInit {
       // console.log(entries);
       // console.log(entries[0].intersectionRatio);
 
-      if(entries[0].intersectionRatio > 0) {
+      if (entries[0].intersectionRatio > 0) {
         $("#navbar").addClass("scrolled").removeClass("scrolledLower");
       }
-      else if(entries[0].intersectionRatio <= 0 && !firstExecution) {
-        if($("html").hasClass("darkMode")) $("html").removeClass("darkMode");
+      else if (entries[0].intersectionRatio <= 0 && !firstExecution) {
+        if ($("html").hasClass("darkMode")) $("html").removeClass("darkMode");
         $("#navbar").addClass("scrolledLower").removeClass("scrolled");
       }
       else {
@@ -44,21 +44,26 @@ export class AboutmeComponent implements OnInit {
     observer.observe(subPage);
 
 
+
     //                     animation
-    var tlAbout = new TimelineMax({onUpdate:updatePercentage});
+    var tlAbout = new TimelineMax({
+      // ⬇⬇⬇ onUpdate allow to renew animation, onComplete  ⬇⬇⬇
+      onComplete: killAnimation,
+      // onUpdate: updatePercentage
+    });
     const controller = new ScrollMagic.Controller();
 
-    tlAbout.from("#profilePNG", 1, {x:-100, opacity: 0, ease: Power4.easeInOut}, "=-.8");
-    tlAbout.to("#profilePNG", 1, {x:0 , opacity: 1});
+    tlAbout.from("#profilePNG", 1, { x: -100, opacity: 0, ease: Power4.easeInOut }, "=-.8");
+    tlAbout.to("#profilePNG", 1, { x: 0, opacity: 1 });
 
-    tlAbout.from("#firstDesc", 1, {x:300, opacity: 0, ease: Power4.easeInOut}, "=-1.8");
-    tlAbout.to("#firstDesc", 1, {x:0 , opacity: 1, ease: Power4.easeInOut});
+    tlAbout.from("#firstDesc", 1, { x: 300, opacity: 0, ease: Power4.easeInOut }, "=-1.8");
+    tlAbout.to("#firstDesc", 1, { x: 0, opacity: 1, ease: Power4.easeInOut });
 
-    tlAbout.from("#secondDesc", 1, {x:-180, opacity: 0,ease: Power4.easeInOut}, "=-2.35");
-    tlAbout.to("#secondDesc", 1, {x:0 , opacity: 1});
+    tlAbout.from("#secondDesc", 1, { x: -180, opacity: 0, ease: Power4.easeInOut }, "=-2.35");
+    tlAbout.to("#secondDesc", 1, { x: 0, opacity: 1 });
 
-    tlAbout.from("#nextPage i", 1, {opacity: 0}, "=-2");
-    tlAbout.to("#nextPage i", 1, {opacity: 1});
+    tlAbout.from("#nextPage i", 1, { opacity: 0 }, "=-2");
+    tlAbout.to("#nextPage i", 1, { opacity: 1 });
 
     const scene1 = new ScrollMagic.Scene({
       triggerElement: "#secondSection",
@@ -68,24 +73,30 @@ export class AboutmeComponent implements OnInit {
     })
       // .setPin("#secondSection")
       .setTween(tlAbout)
-        .addTo(controller);
+      .addTo(controller);
 
     function updatePercentage() {
       tlAbout.progress();
     }
 
+    function killAnimation() {
+      tlAbout.kill();
+    }
+
 
     //         scroll to the next section
-    $("#nextPage").one('mouseover', function() {
+    $("#nextPage").one('click', function () {
       $([document.documentElement, document.body]).animate({
-          scrollTop: $("app-projects").offset().top
+        scrollTop: $("app-projects").offset().top
       }, 1100, "swing");
 
-      setTimeout( () => {
+      setTimeout(() => {
         $("#navbar").addClass("scrolledLower").removeClass("scrolled");
       }, 900);
 
       $(this).fadeTo(850, 0);
+      $(this).css("cursor", "default");
+
     });
 
   }

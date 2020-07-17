@@ -1,3 +1,7 @@
+#secondSection {
+  overflow-x: hidden;
+}
+
 #container {
   max-width: 75%;
   height: 100%;
@@ -22,6 +26,8 @@
   padding-top: 2em;
 
   width: 100%;
+
+  cursor: pointer;
 }
 
 #nextPage i {
@@ -55,13 +61,46 @@ section {
   // background: #28272b;
   background: var(--dark-bg-color);
 }
-// ------------------S M A L L ------------------
-@media (min-width: 576px) and (max-width: 767.98px) {
-  P {
+
+// ------------------ X S ------------------
+@media (max-width: 575.98px) {
+  p {
     font-size: 1.35em;
   }
   #container {
     max-width: 100%;
+  }
+  #firstDesc,
+  #secondDesc {
+    width: 90%;
+    margin: auto;
+  }
+  #secondDesc {
+    padding-bottom: 1em;
+  }
+  img {
+    width: 10em;
+  }
+}
+
+// ------------------S M A L L ------------------
+@media (min-width: 576px) and (max-width: 767.98px) {
+  p {
+    font-size: 1.35em;
+  }
+  #container {
+    max-width: 100%;
+  }
+  #firstDesc,
+  #secondDesc {
+    width: 75%;
+    margin: auto;
+  }
+  #secondDesc {
+    padding-bottom: 1em;
+  }
+  img {
+    width: 10em;
   }
 }
 

@@ -61,6 +61,13 @@ h1:hover {
   opacity: 0.85;
 }
 
+// ------------------ X S ------------------
+@media (max-width: 575.98px) {
+  h1 {
+    font-size: 2.3em;
+  }
+}
+
 // ------------------S M A L L ------------------
 @media (min-width: 576px) and (max-width: 767.98px) {
   h1 {

@@ -1,3 +1,7 @@
+.mat-snack-bar-container {
+  max-width: 90vh !important;
+}
+
 a:hover {
   color: rgb(237, 235, 216);
 }
@@ -28,7 +32,7 @@ hr:last-of-type {
 
 @keyframes anim1 {
   from {
-    transform: translateY(-100px);
+    transform: translateY(80px);
     opacity: 0;
   }
   to {
@@ -271,9 +275,17 @@ section blockquote {
 
 section span {
   width: 100%;
-  background: red;
+  // background: red;
   height: 5px;
   margin-top: 20px;
+}
+
+// ------------------ X S ------------------
+@media (max-width: 575.98px) {
+  .projects img {
+    width: 13em;
+    height: 13em;
+  }
 }
 
 // ------------------S M A L L ------------------

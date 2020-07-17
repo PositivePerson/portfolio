@@ -19,7 +19,7 @@ import { TweenMax, TimelineMax, Power4 } from "gsap"; // Also works with TweenLi
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import { ProjectService } from './project.service';
 
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ToolsSnackBarComponent } from './tools-snack-bar/tools-snack-bar.component';
 
 
@@ -29,29 +29,30 @@ import { ToolsSnackBarComponent } from './tools-snack-bar/tools-snack-bar.compon
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
-  // encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: Project[];
-  durationInSeconds = 2.5;
+  // durationInSeconds = 2.5;
+  durationInSeconds = 2500;
   private projectObserver: IntersectionObserver;
 
-  constructor( projectService: ProjectService, private _snackBar: MatSnackBar) {
+  constructor(projectService: ProjectService, private _snackBar: MatSnackBar) {
     this.projects = projectService.getProjects();
-   }
-
-   openSnackBar( idOfProject ) {
-     this._snackBar.openFromComponent(ToolsSnackBarComponent, {
-       duration: this.durationInSeconds * 1000,
-      //  horizontalPosition: "center",
-      //  verticalPosition: "top",
-       panelClass: ['snackbar-background'],
-       data: this.projects[ idOfProject -1].tools,
-      });
-      console.log( "just passed: " , this.projects[ idOfProject -1].tools , "to the next snackbar");
   }
 
-  @ViewChildren('animatedElement' )  animatedElements: QueryList<ElementRef>;
+  openSnackBar(idOfProject) {
+    this._snackBar.openFromComponent(ToolsSnackBarComponent, {
+      duration: this.durationInSeconds * 1000,
+      //  horizontalPosition: "center",
+      //  verticalPosition: "top",
+      panelClass: ['snackbar-background'],
+      data: this.projects[idOfProject - 1].tools,
+    });
+    console.log("just passed: ", this.projects[idOfProject - 1].tools, "to the next snackbar");
+  }
+
+  @ViewChildren('animatedElement') animatedElements: QueryList<ElementRef>;
 
   ngOnInit(): void {
 
@@ -109,30 +110,31 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     // console.log("projectPageElements ", projectPageElements);
     // console.log("type of .nativeElement from this array above: ", typeof projectPageElements[0].nativeElement);
 
-        this.projectObserver = new IntersectionObserver((entries) => {
+    this.projectObserver = new IntersectionObserver((entries) => {
 
-          // console.log("intersectionRatio is: " + entries[0].intersectionRatio);
+      // console.log("intersectionRatio is: " + entries[0].intersectionRatio);
 
-            entries.forEach(entry => {
-                if(entry.intersectionRatio > 0) {
-                  // console.log( typeof entry.target );
-                  // console.log( entry.target );
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          // console.log( typeof entry.target );
+          // console.log(entry.target);
 
-                    //@ts-ignore
-                    entry.target.style.animation = `anim${entry.target.dataset.animation} 2s ${entry.target.dataset.delay} forwards ease-out`;
-                    // console.log("indeed intersectionRatio is: " + entry.intersectionRatio);
-                  }
-                else {
-                    //@ts-ignore
-                    entry.target.style.animation = 'none';
-                }
-            })
+          //@ts-ignore
+          entry.target.style.animation = `anim${entry.target.dataset.animation} .8s ${entry.target.dataset.delay} forwards ease-out`;
+          // console.log("indeed intersectionRatio is: " + entry.intersectionRatio);
+        }
+        // ⬇⬇⬇ if ON, animation will repeat every time when on screen ⬇⬇⬇
+        // else {
+        //   //@ts-ignore
+        //   entry.target.style.animation = 'none';
+        // }
+      })
 
-        })
+    })
 
-        projectPageElements.forEach((element) => {
-          this.projectObserver.observe(element.nativeElement as HTMLInputElement);
-        })
+    projectPageElements.forEach((element) => {
+      this.projectObserver.observe(element.nativeElement as HTMLInputElement);
+    })
 
 
 

@@ -20,6 +20,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 // import { setTheme } from 'ngx-bootstrap/utils';
 
+import { ParallaxScrollModule } from 'ng2-parallaxscroll';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     BrowserAnimationsModule,
     MatButtonModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ParallaxScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
