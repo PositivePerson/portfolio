@@ -1,4 +1,4 @@
-import {Project} from './project-template';
+import { Project } from './project-template';
 
 export const PROJECTS: Project[] = [
   {
@@ -6,7 +6,7 @@ export const PROJECTS: Project[] = [
     name: "QuaranTime",
     img: "quaranTime.jpg",
     link: "https://quarantimer.now.sh/",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    description: " Quarantime - created due to situation on the world. Many countries had to close institutions like schools. On this website you could e.g. watch timers relative to that. Also I placed there general information based on research that might help people in taking better decisions in this time.",
     tools:
       // {
       //   Javascript: true,
@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
     name: "YelpCamp",
     img: "yelpcamp.png",
     link: "https://fun-riding.herokuapp.com/",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    description: "YelpCamp - app that allows to create accounts, post images with description, put comments, edit etc. Thanks to databases it saves everything; Passwords are protected so remains stored with safety. ",
     tools:
       // {
       //   Javascript: true,
@@ -53,12 +53,12 @@ export const PROJECTS: Project[] = [
       // }
       [
         "Javascript",
-        "jQuery",
         "HTML",
         "CSS",
         "Bootstrap",
-        "Semantic",
-        "MongoDB"
+        "Ejs",
+        "MongoDB",
+        "Express"
       ]
   },
   {
@@ -95,20 +95,20 @@ export const PROJECTS: Project[] = [
     link: "https://positiveperson.github.io/MuseumOfCandy/",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
     tools:
-  //     {
-  //       Javascript: false,
-  //       jQuery: false,
-  //       HTML: true,
-  //       CSS: true,
-  //       Bootstrap: true,
-  //       Semantic: false,
-  //       Angular: false,
-  //       React: false,
-  //       MongoDB: false,
-  //       Hawler: false,
-  //       PaperScript: false
-  //     }
-        [
+      //     {
+      //       Javascript: false,
+      //       jQuery: false,
+      //       HTML: true,
+      //       CSS: true,
+      //       Bootstrap: true,
+      //       Semantic: false,
+      //       Angular: false,
+      //       React: false,
+      //       MongoDB: false,
+      //       Hawler: false,
+      //       PaperScript: false
+      //     }
+      [
         "HTML",
         "CSS",
         "Bootstrap"
@@ -119,24 +119,25 @@ export const PROJECTS: Project[] = [
     name: "CircleSite",
     img: "circlesv2.png",
     link: "https://positiveperson.github.io/CircleSite/",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+    description: "Turn on sound. Click different keys and watch what happen; Project created with Javascript in 98%. Inspiration: patatap.",
     tools:
-  //     {
-  //       Javascript: true,
-  //       jQuery: true,
-  //       HTML: true,
-  //       CSS: true,
-  //       Bootstrap: true,
-  //       Semantic: true,
-  //       Angular: false,
-  //       React: false,
-  //       MongoDB: false,
-  //       Hawler: true,
-  //       PaperScript: true
-  //     }
-        [
+      //     {
+      //       Javascript: true,
+      //       jQuery: true,
+      //       HTML: true,
+      //       CSS: true,
+      //       Bootstrap: true,
+      //       Semantic: true,
+      //       Angular: false,
+      //       React: false,
+      //       MongoDB: false,
+      //       Hawler: true,
+      //       PaperScript: true
+      //     }
+      [
         "Javascript",
-        "jQuery",
+        "Howler",
+        "Paper.js",
         "HTML",
         "CSS"
       ]

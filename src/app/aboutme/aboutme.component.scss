@@ -1,128 +1,131 @@
 #secondSection {
-  overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 #container {
-  max-width: 75%;
-  height: 100%;
+	max-width: 75%;
+	height: 100%;
 }
 
 #About_me {
-  /* height: 15em; */
-  width: 100%;
-  justify-content: center;
-  /* padding-top: 25%; */
-  margin-left: 0;
-  z-index: 100;
+	/* height: 15em; */
+	width: 100%;
+	justify-content: center;
+	/* padding-top: 25%; */
+	margin-left: 0;
+	z-index: 100;
 }
 
 #nextPage {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 
-  position: absolute;
-  bottom: 0;
-  padding-bottom: 1.4em;
-  padding-top: 2em;
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 1.4em;
+	padding-top: 2em;
 
-  width: 100%;
+	width: 100%;
 
-  cursor: pointer;
+	cursor: pointer;
 }
 
 #nextPage i {
-  margin-left: auto;
-  margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 
-  font-size: 3em;
+	font-size: 3em;
 }
 
 p {
-  color: var(--default-letters);
-  font-family: "Lobster", cursive;
-  font-size: 1.8em;
-  align-items: center;
+	color: var(--default-letters);
+	font-family: "Lobster", cursive;
+	font-size: 1.8em;
+	align-items: center;
 }
 
 img {
-  // height: 15.5em;
-  width: 100%;
-  height: auto;
+	// height: 15.5em;
+	width: 100%;
+	height: auto;
 
-  max-width: 15.5em;
-  max-height: 15.5em;
+	max-width: 15.5em;
+	max-height: 15.5em;
 }
 
 /* style scroll-animated things */
 section {
-  height: 100vh !important;
-  position: relative;
+	height: 100vh !important;
+	position: relative;
 
-  // background: #28272b;
-  background: var(--dark-bg-color);
+	// background: #28272b;
+	background: var(--dark-bg-color);
 }
 
 // ------------------ X S ------------------
 @media (max-width: 575.98px) {
-  p {
-    font-size: 1.35em;
-  }
-  #container {
-    max-width: 100%;
-  }
-  #firstDesc,
-  #secondDesc {
-    width: 90%;
-    margin: auto;
-  }
-  #secondDesc {
-    padding-bottom: 1em;
-  }
-  img {
-    width: 10em;
-  }
+	p {
+		font-size: 1.35em;
+	}
+	#container {
+		max-width: 100%;
+	}
+	#firstDesc,
+	#secondDesc {
+		width: 90%;
+		margin: auto;
+	}
+	#secondDesc {
+		padding-bottom: 1em;
+	}
+	img {
+		width: 10em;
+	}
 }
 
 // ------------------S M A L L ------------------
 @media (min-width: 576px) and (max-width: 767.98px) {
-  p {
-    font-size: 1.35em;
-  }
-  #container {
-    max-width: 100%;
-  }
-  #firstDesc,
-  #secondDesc {
-    width: 75%;
-    margin: auto;
-  }
-  #secondDesc {
-    padding-bottom: 1em;
-  }
-  img {
-    width: 10em;
-  }
+	p {
+		font-size: 1.25em;
+	}
+	#container {
+		max-width: 100%;
+	}
+	#firstDesc,
+	#secondDesc {
+		width: 75%;
+		margin: auto;
+	}
+	#secondDesc {
+		padding-bottom: 1em;
+	}
+	img {
+		width: 10em;
+	}
+	#nextPage i {
+		font-size: 2.5em;
+	}
 }
 
 // ------------------ M E D I U M ------------------
 @media (min-width: 768px) and (max-width: 991.98px) {
-  P {
-    font-size: 1.5em;
-  }
-  #container {
-    max-width: 85%;
-  }
-  #secondSection {
-    overflow: hidden;
-  }
+	P {
+		font-size: 1.5em;
+	}
+	#container {
+		max-width: 85%;
+	}
+	#secondSection {
+		overflow: hidden;
+	}
 }
 
 // ------------------ L A R G E ------------------
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  P {
-    font-size: 1.5em;
-  }
-  #container {
-    max-width: 80%;
-  }
+	P {
+		font-size: 1.5em;
+	}
+	#container {
+		max-width: 80%;
+	}
 }
