@@ -1,35 +1,42 @@
 :host {
-  height: calc(100vh - 9em);
-  // background: blue;
-  display: block;
+	height: calc(100vh - 9em);
+	// background: blue;
+	display: block;
 }
 
 section {
-  height: 100%;
-  font-size: 4em;
+	height: 100%;
+	font-size: 4em;
 }
 
 p {
-  font-family: "Lobster", cursive;
-  margin-bottom: 0.5em;
+	font-family: "Lobster", cursive;
+	margin-bottom: 0.5em;
+}
+
+// ------------------ X S ------------------
+@media (max-width: 575.98px) {
+	section {
+		font-size: 3em;
+	}
 }
 
 // ------------------S M A L L ------------------
 @media (min-width: 576px) and (max-width: 767.98px) {
-  section {
-    font-size: 3.5em;
-  }
+	section {
+		font-size: 3.5em;
+	}
 }
 
 // ------------------ M E D I U M ------------------
 @media (min-width: 768px) and (max-width: 991.98px) {
-  section {
-    font-size: 3.5em;
-  }
+	section {
+		font-size: 3.5em;
+	}
 }
 // ------------------ L A R G E ------------------
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  section {
-    font-size: 3.5em;
-  }
+	section {
+		font-size: 3.5em;
+	}
 }

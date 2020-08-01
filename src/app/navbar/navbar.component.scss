@@ -56,6 +56,13 @@ a.nav-link {
 	cursor: pointer;
 }
 
+// ------------------ X S ------------------
+@media (max-width: 575.98px) {
+	nav {
+		// line-height: 1.9em;
+	}
+}
+
 // ------------------S M A L L ------------------
 @media (min-width: 576px) and (max-width: 767.98px) {
 	:host {

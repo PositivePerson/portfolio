@@ -1,31 +1,39 @@
 #arrowSection {
-  height: calc(100vh - 2em);
+	height: calc(100vh - 2em);
 }
 
 #targetArrow {
-  font-size: 4em;
+	font-size: 4em;
+}
+
+// ------------------ X S ------------------
+@media (max-width: 575.98px) {
+	#targetArrow {
+		font-size: 3em;
+		padding: 0.05em;
+	}
 }
 
 // ------------------S M A L L ------------------
 @media (min-width: 576px) and (max-width: 767.98px) {
-  #targetArrow {
-    font-size: 3em;
-    padding: 0.05em;
-  }
+	#targetArrow {
+		font-size: 3em;
+		padding: 0.05em;
+	}
 }
 
 // ------------------ M E D I U M ------------------
 @media (min-width: 768px) and (max-width: 991.98px) {
-  #targetArrow {
-    font-size: 3em;
-    padding: 0.05em;
-  }
+	#targetArrow {
+		font-size: 3em;
+		padding: 0.05em;
+	}
 }
 
 // ------------------ L A R G E ------------------
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  #targetArrow {
-    font-size: 3em;
-    padding: 0.05em;
-  }
+	#targetArrow {
+		font-size: 3em;
+		padding: 0.05em;
+	}
 }

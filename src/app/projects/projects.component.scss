@@ -286,15 +286,25 @@ section span {
 
 // ------------------ X S ------------------
 @media (max-width: 575.98px) {
+	.projects {
+		height: 80vh;
+	}
 	.projects img {
-		width: 13em;
-		height: 13em;
+		width: 10em;
+		height: 10em;
+	}
+	.description p {
+		font-size: 1.0em;
+		text-indent: 1em;
+
+		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 	.showToolsButtonDivLeft,
 	.showToolsButtonDivRight {
 		position: initial;
 
-		padding-top: 1em;
+		padding-top: .5em;
 		margin-left: 0;
 		margin-right: 0;
 	}

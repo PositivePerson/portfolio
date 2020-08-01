@@ -1,50 +1,57 @@
 #certificatesSection {
-  /* margin-top: -2em; */
+	/* margin-top: -2em; */
 
-  /* background: url("../../assets/imgs/bck5.jpg") no-repeat;
+	/* background: url("../../assets/imgs/bck5.jpg") no-repeat;
   background-size: cover;
   -moz-box-shadow:  rgba(49, 46, 55,0.7);
   -webkit-box-shadow:  rgba(49, 46, 55,0.7);
   box-shadow:  rgba(49, 46, 55,0.7); */
-  /* background: #28272b; */
+	/* background: #28272b; */
 
-  font-size: 1.3em;
+	font-size: 1.3em;
 }
 
 .row {
-  /* background: rgba(49, 46, 55,0.7); */
+	/* background: rgba(49, 46, 55,0.7); */
 }
 
 /* .certificate {
   opacity: 1;
 } */
 
+// ------------------ X S ------------------
+@media (max-width: 575.98px) {
+	#certificatesSection {
+		font-size: 1.1em;
+	}
+}
+
 // ------------------S M A L L ------------------
 @media (min-width: 576px) and (max-width: 767.98px) {
-  #certificatesSection {
-    font-size: 1.23em;
-  }
-  .certificate {
-    padding-left: 7em;
-  }
+	#certificatesSection {
+		font-size: 1.23em;
+	}
+	.certificate {
+		padding-left: 7em;
+	}
 }
 
 // ------------------ M E D I U M ------------------
 @media (min-width: 768px) and (max-width: 991.98px) {
-  #certificatesSection {
-    font-size: 1.23em;
-  }
-  .certificate {
-    padding-left: 7em;
-  }
+	#certificatesSection {
+		font-size: 1.23em;
+	}
+	.certificate {
+		padding-left: 7em;
+	}
 }
 
 // ------------------ L A R G E ------------------
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  #certificatesSection {
-    font-size: 1.23em;
-  }
-  .certificate {
-    padding-left: 7em;
-  }
+	#certificatesSection {
+		font-size: 1.23em;
+	}
+	.certificate {
+		padding-left: 7em;
+	}
 }
