@@ -284,6 +284,26 @@ section span {
 	margin-top: 20px;
 }
 
+.imgBox a {
+	position: relative;
+	cursor: pointer;
+}
+
+.imgBox a::before {
+	border-radius: 13%;
+	content: ' ';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.5);
+
+	opacity: 0;
+	transition: all 350ms;
+}
+
 // ------------------ X S ------------------
 @media (max-width: 575.98px) {
 	.projects {
@@ -363,6 +383,9 @@ section span {
 	.description p {
 		font-size: 1.2em;
 	}
+	.imgBox a:hover::before {
+		opacity: 1;
+	}
 }
 // ------------------ L A R G E ------------------
 @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -372,5 +395,15 @@ section span {
 	}
 	.description p {
 		font-size: 1.2em;
+	}
+	.imgBox a:hover::before {
+		opacity: 1;
+	}
+}
+
+// ------------------ X L ------------------
+@media (min-width: 1200px) {
+	.imgBox a:hover::before {
+		opacity: 1;
 	}
 }

@@ -137,6 +137,9 @@ section {
 	}
 	#container {
 		max-width: 85%;
+
+		padding-top: 5em !important;
+		padding-bottom: 5em !important;
 	}
 	#secondSection {
 		overflow: hidden;
@@ -150,5 +153,16 @@ section {
 	}
 	#container {
 		max-width: 80%;
+
+		padding-top: 5em !important;
+		padding-bottom: 5em !important;
+	}
+}
+
+// ------------------ X L ------------------
+@media (min-width: 1200px) {
+	#container {
+		padding-top: 7em !important;
+		padding-bottom: 7em !important;
 	}
 }

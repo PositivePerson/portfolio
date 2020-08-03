@@ -24,3 +24,28 @@
 		margin-bottom: 0;
 	}
 }
+
+// ------------------S M A L L ------------------
+@media (min-width: 576px) and (max-width: 767.98px) {
+	#projectsInfo {
+		margin-bottom: 0;
+	}
+}
+
+// ------------------ M E D I U M ------------------
+@media (min-width: 768px) and (max-width: 991.98px) {
+	#projectsInfo {
+		margin-bottom: 0;
+	}
+}
+
+// ------------------ L A R G E ------------------
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	#projectsInfo {
+		margin-bottom: 1.5em;
+	}
+}
+
+// ------------------ L A R G E ------------------
+@media (min-width: 1200px) {
+}
