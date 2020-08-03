@@ -15,3 +15,12 @@
 	letter-spacing: 0.18em;
 	font-size: 1.8em;
 }
+
+// ------------------ X S ------------------
+@media (max-width: 575.98px) {
+	#projectsInfo {
+		padding-top: 1.5em;
+		padding-bottom: 1.5em;
+		margin-bottom: 0;
+	}
+}
