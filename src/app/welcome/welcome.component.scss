@@ -3,6 +3,7 @@
 	background-image: url("../../assets/imgs/sea_background.jpeg");
 	background-size: cover;
 	background-attachment: fixed;
+  min-height: 100%;
 	height: 100%;
 }
 
@@ -48,7 +49,7 @@
 } */
 
 h1 {
-	font-size: 3.6em;
+	font-size: 2.6em;
 	font-family: "Lobster", cursive;
 	color: #f2e9c5;
 	/* background: #595867; */
@@ -78,13 +79,13 @@ h1:hover {
 // ------------------ M E D I U M ------------------
 @media (min-width: 768px) and (max-width: 991.98px) {
 	h1 {
-		font-size: 3.0em;
+		font-size: 2.0em;
 	}
 }
 
 // ------------------ L A R G E ------------------
 @media (min-width: 992px) and (max-width: 1199.98px) {
 	h1 {
-		font-size: 3.3em;
+		font-size: 2.3em;
 	}
 }
