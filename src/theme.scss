@@ -32,6 +32,17 @@ $warn: map-get($custom-theme, warn);
   --color-accent: #{mat-color($custom-accent)};
   --color-warn: #{mat-color($custom-warn)};
 
+  // Rebuild - new color palette
+  --color-Sea: #393E46;
+  --color-Sea-plus-1: #1F2226;
+  --color-Sea-minus-1: #4E5258;
+  --color-Light: #EEEEEE;
+  // --color-grey-blue: #AAD8D3;
+  --color-Blue: #00ADB5;
+  --color-Glass-Blue: rgba(170, 216, 211, .5);
+  --color-Glass-Blue-plus-1: rgba(122, 154, 151, .5);
+  --color-Contrast: #FFAA33;
+
   --default-letters: #fffde7;
   --light-bg-color: #312e37;
   --dark-bg-color: #28272b;

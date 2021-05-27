@@ -1,10 +1,50 @@
+.nav {
+  position: fixed;
+  z-index: 5;
+  left: 2em;
+  top: 2.5em;
+
+  /* Glass Blue */
+
+  background: var(--color-Glass-Blue);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 50px;
+}
+
+ul {
+  margin-bottom: 0;
+  list-style: none;
+  padding: 0 1em;
+  font-size: .9em;
+}
+
 li {
-	margin-right: 0.5em;
-	margin-left: 0.5em;
+  float: left;
+  // margin: 0 .5em;
+	color: var(--color-Light);
+  height: 100%;
+	// margin-right: 0.5em;
+	// margin-left: 0.5em;
+}
+
+li:not(:first-of-type) {
+  margin-left: 1.8em;
+  padding: .5em 0;
+}
+
+li:first-of-type {
+  // height: 100%;
+}
+
+li img {
+  width: 1.5em;
+  height: 100%;
 }
 
 nav a {
-	color: var(--default-letters);
 }
 
 nav {

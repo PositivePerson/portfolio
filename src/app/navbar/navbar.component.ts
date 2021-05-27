@@ -19,51 +19,22 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
 
-      // var tlNavbar = new TimelineMax({onUpdate:updatePercentage});
-      // const controllerNavbar = new ScrollMagic.Controller();
-
-      // const sceneNavbar = new ScrollMagic.Scene()
-
-      // if( sceneNavbar.scrollOffset() )
-
-      // function updatePercentage() {
-      //   tlNavbar.progress();
-      //   console.log(tlNavbar.progress());
-      // }
-
-
-
-      //          navbar showing
-      $(function () {
-        $(document).scroll(function () {
-            var $nav = $("#navbar");
-            // $nav.toggleClass("notscrolled", $(this).scrollTop() <= $nav.height());
-            if( $(this).scrollTop() <= $nav.height() ){
-
-              $nav.addClass("notscrolled").removeClass("scrolled");
-
-              // if($nav.hasClass("scrolled")){
-              //   $nav.removeClass("scrolled");
-              // }
-
-              // if($nav.hasClass("scrolledLower")){
-              //   $nav.removeClass("scrolledLower");
-              // }
-
-            } else {
-
-              $nav.addClass("scrolled").removeClass("notscrolled");
-
-            }
-        });
-      });
-
+      // //          navbar showing
+      $("#navbar").addClass("scrolled").removeClass("notscrolled");
       // $(function () {
-      //   let position = window.pageYOffset;
-      //   console.log("Position is: " + position)
-      //   $("#navbar").toggleClass("scrolledLower", position > 500);
-      // });
+      //   $(document).scroll(function () {
+      //       var $nav = $("#navbar");
+      //       if( $(this).scrollTop() <= $nav.height() ){
 
+      //         $nav.addClass("notscrolled").removeClass("scrolled");
+
+      //       } else {
+
+      //         $nav.addClass("scrolled").removeClass("notscrolled");
+
+      //       }
+      //   });
+      // });
 
       //click 'About me'
       $("#goToMainWelcome").click(function() {
