@@ -12,10 +12,10 @@ import { CertificatesComponent } from './certificates/certificates.component';
 import { ArrowsComponent } from './arrows/arrows.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolsSnackBarComponent } from './projects/tools-snack-bar/tools-snack-bar.component';
+import { ContactMeComponent } from './contact-me/contact-me.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { ContactMeComponent } from './contact-me/contact-me.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 // import { setTheme } from 'ngx-bootstrap/utils';
