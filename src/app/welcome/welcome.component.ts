@@ -11,6 +11,24 @@ export class WelcomeComponent implements OnInit {
 
   constructor() { }
 
+  accessButton() {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#secondSection").offset().top
+    }, 600);
+
+    $('body').removeClass('stop-scrolling');
+  }
+
+  mouseenterButton() {
+    $("#firstWelcomeLine").css("background-position", "-100% 0");
+    $("#secondWelcomeLine").css("background-position", "100% 0");
+  }
+
+  mouseleaveButton() {
+    $("#firstWelcomeLine").css("background-position", "0 0");
+    $("#secondWelcomeLine").css("background-position", "0 0");
+  }
+
   ngOnInit(): void {
     //scroll block
     // $('body').addClass('stop-scrolling');
@@ -39,23 +57,19 @@ export class WelcomeComponent implements OnInit {
     //   $("#secondWelcomeLine #mainWelcome").show();
     // });
 
-    $("button").on("mouseenter", () => {
-      $("#firstWelcomeLine").css("background-position", "-100% 0");
-      $("#secondWelcomeLine").css("background-position", "100% 0");
-    }).on("mouseleave", () => {
-      $("#firstWelcomeLine").css("background-position", "0 0");
-      $("#secondWelcomeLine").css("background-position", "0 0");
-    })
+
+    // $("[id=btnDive]")
+    // .on("mouseenter", () => {
+    //   $("#firstWelcomeLine").css("background-position", "-100% 0");
+    //   $("#secondWelcomeLine").css("background-position", "100% 0");
+    // })
+    // .on("mouseleave", () => {
+    //   $("#firstWelcomeLine").css("background-position", "0 0");
+    //   $("#secondWelcomeLine").css("background-position", "0 0");
+    // })
 
     //Click "Hi..."
-    $("button").on("click", function () {
-      $([document.documentElement, document.body]).animate({
-        scrollTop: $("#secondSection").offset().top
-      }, 600);
-
-      $('body').removeClass('stop-scrolling');
-    });
-    // $("[id=mainWelcome]").on("click", function () {
+    // $("[id=btnDive]").on("click", function () {
     //   $([document.documentElement, document.body]).animate({
     //     scrollTop: $("#secondSection").offset().top
     //   }, 600);
