@@ -39,22 +39,29 @@ export class WelcomeComponent implements OnInit {
     //   $("#secondWelcomeLine #mainWelcome").show();
     // });
 
-    $("button").mouseover(() => {
+    $("button").on("mouseenter", () => {
       $("#firstWelcomeLine").css("background-position", "-100% 0");
       $("#secondWelcomeLine").css("background-position", "100% 0");
-    }).mouseout(() => {
+    }).on("mouseleave", () => {
       $("#firstWelcomeLine").css("background-position", "0 0");
       $("#secondWelcomeLine").css("background-position", "0 0");
     })
 
     //Click "Hi..."
-    $("[id=mainWelcome]").click(function () {
+    $("button").on("click", function () {
       $([document.documentElement, document.body]).animate({
         scrollTop: $("#secondSection").offset().top
       }, 600);
 
       $('body').removeClass('stop-scrolling');
     });
+    // $("[id=mainWelcome]").on("click", function () {
+    //   $([document.documentElement, document.body]).animate({
+    //     scrollTop: $("#secondSection").offset().top
+    //   }, 600);
+
+    //   $('body').removeClass('stop-scrolling');
+    // });
 
   }
 
