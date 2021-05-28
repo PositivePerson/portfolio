@@ -19,6 +19,15 @@ export class AboutmeComponent implements OnInit {
 
   constructor() { }
 
+  scrollToWorks() {
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("app-projects").offset().top
+    }, 1100, "swing");
+
+    // $(this).fadeTo(850, 0);
+    // $(this).css("cursor", "default");
+  }
+
   ngOnInit(): void {
 
     //                  navigation - color
@@ -53,8 +62,8 @@ export class AboutmeComponent implements OnInit {
     });
     const controller = new ScrollMagic.Controller();
 
-    tlAbout.from("#profilePNG", 1, { x: -100, opacity: 0, ease: Power4.easeInOut }, "=-.8");
-    tlAbout.to("#profilePNG", 1, { x: 0, opacity: 1 });
+    tlAbout.from("#web_window", 1, { x: -100, opacity: 0, ease: Power4.easeInOut }, "=-.8");
+    tlAbout.to("#web_window", 1, { x: 0, opacity: 1 });
 
     tlAbout.from("#firstDesc", 1, { x: 300, opacity: 0, ease: Power4.easeInOut }, "=-1.8");
     tlAbout.to("#firstDesc", 1, { x: 0, opacity: 1, ease: Power4.easeInOut });
@@ -85,19 +94,19 @@ export class AboutmeComponent implements OnInit {
 
 
     //         scroll to the next section
-    $("#nextPage").one('click', function () {
-      $([document.documentElement, document.body]).animate({
-        scrollTop: $("app-projects").offset().top
-      }, 1100, "swing");
+    // $("#nextPage").one('click', function () {
+    //   $([document.documentElement, document.body]).animate({
+    //     scrollTop: $("app-projects").offset().top
+    //   }, 1100, "swing");
 
-      setTimeout(() => {
-        $("#navbar").addClass("scrolledLower").removeClass("scrolled");
-      }, 900);
+    //   setTimeout(() => {
+    //     $("#navbar").addClass("scrolledLower").removeClass("scrolled");
+    //   }, 900);
 
-      $(this).fadeTo(850, 0);
-      $(this).css("cursor", "default");
+    //   $(this).fadeTo(850, 0);
+    //   $(this).css("cursor", "default");
 
-    });
+    // });
 
   }
 

@@ -39,6 +39,8 @@
   bottom: 5%;
   right: 5%;
   font-size: 1.7em;
+
+  z-index: 1;
 }
 
 .btnBox {
@@ -51,6 +53,7 @@
   align-items: center;
 
   color: var(--color-Light);
+  z-index: 3;
 
   img {
     width: 4em;
@@ -73,6 +76,19 @@
     .orange {
       color: orange;
     }
+  }
+}
+
+.wave {
+  z-index: 0;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100vw;
+    max-width: unset;
   }
 }
 
