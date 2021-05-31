@@ -53,6 +53,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
   }
 
   @ViewChildren('animatedElement') animatedElements: QueryList<ElementRef>;
+  @ViewChildren('img') imgs: QueryList<ElementRef>;
 
   ngOnInit(): void {
 
@@ -106,6 +107,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     //            uncontrolled animation
     // const projectPageElements = document.querySelectorAll('.anim');
     const projectPageElements = this.animatedElements.toArray();
+    const arrayOfImgs = this.imgs.toArray();
 
     // console.log("projectPageElements ", projectPageElements);
     // console.log("type of .nativeElement from this array above: ", typeof projectPageElements[0].nativeElement);
@@ -134,6 +136,16 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
     projectPageElements.forEach((element) => {
       this.projectObserver.observe(element.nativeElement as HTMLInputElement);
+    })
+
+    arrayOfImgs.forEach(element => {
+      console.log(element.nativeElement.attributes[1].nodeValue);
+      element.nativeElement.parentElement.parentElement.parentElement.parentElement.style.background = `
+      linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url(${element.nativeElement.attributes[1].nodeValue}) no-repeat center center `;
+      element.nativeElement.parentElement.parentElement.parentElement.parentElement.style['background-size'] = `cover`;
+      element.nativeElement.parentElement.parentElement.parentElement.style['backdrop-filter'] = `blur(15px)`;
+      // console.log(element.nativeElement.attributes[1]);
     })
 
 
