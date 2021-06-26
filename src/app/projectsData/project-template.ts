@@ -3,7 +3,7 @@ export interface Project {
   name: string,
   img: string,
   link: string,
-  description: string,
+  description: Array<string>,
   tools: Array<string>
     // {
     //   Javascript: boolean,
