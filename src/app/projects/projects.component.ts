@@ -33,8 +33,8 @@ import { ToolsSnackBarComponent } from './tools-snack-bar/tools-snack-bar.compon
 })
 export class ProjectsComponent implements OnInit, AfterViewInit {
   projects: Project[];
-  durationInSeconds = 2.5;
-  // durationInSeconds = 2500;
+  // durationInSeconds = 2.5;
+  durationInSeconds = 2500;
   private projectObserver: IntersectionObserver;
 
   constructor(projectService: ProjectService, private _snackBar: MatSnackBar) {

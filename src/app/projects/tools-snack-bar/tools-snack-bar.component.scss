@@ -1,12 +1,25 @@
 ::ng-deep .snackbar-background {
-  background: var(--default-letters);
+  background: var(--color-Glass-Blue-plus-1);
+}
+
+::ng-deep .mat-snack-bar-container {
+  border-radius: 2em;
+  padding: 7px 14px;
+  min-height: 44px;
 }
 
 .toolsBox {
-  color: var(--dark-bg-color);
-  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .tools {
+  min-width: 1.5em;
+  text-align: center;
+
   white-space: nowrap;
+
+  img {
+    height: 1.8rem;
+  }
 }

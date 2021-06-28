@@ -219,9 +219,19 @@ hr:last-of-type {
   border-radius: 18px !important;
   font-family: inherit !important;
 
-  font-weight: 700;
-  font-size: 1rem;
+  font-size: 16px;
+  backdrop-filter: blur(2px);
+  padding: 0 1.25em !important;
+
+  font-style: normal;
+  // font-weight: 700;
+  // font-size: 1rem;
   color: var(--color-Contrast) !important;
+
+  background: var(--color-Glass-Blue);
+  &:hover {
+    background: var(--color-Glass-Blue-plus-1);
+  }
 }
 
 // .turnArrowUp i {
