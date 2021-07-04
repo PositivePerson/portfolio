@@ -1,4 +1,4 @@
-<section class="container-fluid" id="thirdSectiotn">
+<section class="container-fluid" id="thirdSection">
     <div
       *ngFor="
         let project of projects;
@@ -32,9 +32,9 @@
         >
           <div
             *ngFor="let line of project.description"
-            class="description text-center pl-xl-1 pr-xl-3">
+            class="description d-flex pl-xl-1 pr-xl-3">
             <p
-              class="pr-xl-5 anim"
+              class="ml-auto mb-2 pr-xl-5 anim"
               #animatedElement
               data-animation="1"
               data-delay=".1s"
