@@ -1,4 +1,4 @@
-<section class="container-fluid position-relative" id="thirdSectiotn">
+<section class="container-fluid" id="thirdSectiotn">
     <div
       *ngFor="
         let project of projects;
@@ -6,7 +6,7 @@
         let odd = odd;
         let isLast = last
       "
-      class="row overflow-hidden d-block"
+      class="row overflow-hidden d-block position-relative"
     >
       <!-- ---------------------------------- EVEN ---------------------------------------------- -->
 
@@ -43,22 +43,6 @@
             </p>
           </div>
 
-          <div
-            class="showToolsButtonDivRight w-100"
-            #animatedElement
-            data-animation="2"
-            data-delay="0s"
-          >
-            <button
-              mat-raised-button
-              color="primary"
-              class="showToolsButton"
-              (click)="openSnackBar(project.id)"
-              aria-label="Show tools used in project"
-            >
-              Tools
-            </button>
-          </div>
         </div>
 
         <div class="d-none d-md-block col-2"></div>

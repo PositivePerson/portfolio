@@ -3,7 +3,8 @@
 // }
 
 .mat-snack-bar-container {
-  max-width: none !important;
+  max-width: unset !important;
+  min-width: unset !important;
 }
 
 a:hover {
@@ -227,7 +228,6 @@ hr:last-of-type {
   // font-weight: 700;
   // font-size: 1rem;
   color: var(--color-Contrast) !important;
-
   background: var(--color-Glass-Blue);
   &:hover {
     background: var(--color-Glass-Blue-plus-1);
