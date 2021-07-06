@@ -57,13 +57,28 @@ hr:last-of-type {
   }
 }
 
+@keyframes moveX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50px);
+  }
+}
+
 .description {
   text-align: left;
   // justify-content: center;
+  cursor: pointer;
+
+  transition: all ease 0.5s;
 }
 
 .description-left {
   /* padding-right: 10em; */
+  .description:hover {
+    transform: translateX(15px);
+  }
 }
 
 .description-left p {
@@ -72,6 +87,9 @@ hr:last-of-type {
 
 .description-right {
   /* padding-left: 10em; */
+  .description:hover {
+    transform: translateX(-15px);
+  }
 }
 
 .description-right p {
