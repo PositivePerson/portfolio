@@ -14,7 +14,7 @@ export class WelcomeComponent implements OnInit {
   accessButton() {
     $([document.documentElement, document.body]).animate({
       scrollTop: $("#secondSection").offset().top
-    }, 600);
+    }, 400);
 
     $('body').removeClass('stop-scrolling');
   }

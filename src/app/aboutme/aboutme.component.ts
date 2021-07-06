@@ -22,7 +22,7 @@ export class AboutmeComponent implements OnInit {
   scrollToWorks() {
     $([document.documentElement, document.body]).animate({
       scrollTop: $("app-projects").offset().top
-    }, 1100, "swing");
+    }, 400);
 
     // $(this).fadeTo(850, 0);
     // $(this).css("cursor", "default");

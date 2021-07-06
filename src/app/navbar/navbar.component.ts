@@ -50,7 +50,7 @@ export class NavbarComponent implements OnInit {
           {
             scrollTop: $($(this).attr('href')).offset().top,
           },
-          700,
+          400,
           'swing'
         )
       })
