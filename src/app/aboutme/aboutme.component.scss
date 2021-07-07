@@ -212,8 +212,12 @@ section {
 
 // ------------------ X L ------------------
 @media (min-width: 1200px) {
+  P {
+		font-size: 1.15em;
+    line-height: 1.15;
+	}
 	#container {
-		padding-top: 7em !important;
-		padding-bottom: 7em !important;
+		padding-top: 25vh;
+		padding-bottom: 7em;
 	}
 }
