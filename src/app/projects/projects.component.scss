@@ -329,8 +329,6 @@ section blockquote {
   }
   .description p {
     background: var(--color-Glass-Blue);
-    // padding: 7px 12px 8px 12px;
-    // font-size: .9375rem;
     padding: 8px 13px 9px 13px;
     font-size: .95rem;
     border-radius: 18px;
@@ -344,6 +342,12 @@ section blockquote {
 @media (min-width: 1200px) {
   .imgBox a:hover::before {
     opacity: 1;
+  }
+  .description p {
+    background: var(--color-Glass-Blue);
+    padding: 8px 13px 9px 13px;
+    font-size: .95rem;
+    border-radius: 18px;
   }
   .projects img {
     width: 16em;

@@ -24,17 +24,17 @@
           /></a>
         </div>
 
-        <div class="d-none d-md-block col-2"></div>
+        <div class="d-none d-md-block col-2 col-xl-1"></div>
 
         <div
-          class="col-12 col-md-4 col-xl-3"
+          class="col-12 col-md-4"
           [ngClass]="{ 'description-left': even, 'description-right': odd }"
         >
           <div
             *ngFor="let line of project.description"
             class="description d-flex pl-xl-1 pr-xl-3">
             <p
-              class="ml-auto mb-2 pr-xl-5 anim"
+              class="ml-auto mb-2 mr-xl-5 anim"
               #animatedElement
               data-animation="1"
               data-delay=".1s"
@@ -56,14 +56,14 @@
       >
 
         <div class="d-md-none col-12 col-md-3 col-xl-2 d-flex justify-content-center imgBox">
-        <a
-          href="{{ project.link }}"
-          #animatedElement
-          class="anim"
-          data-animation="1"
-          data-delay=".3s"
-          ><img src="../../assets/imgs/{{ project.img }}" #img round
-        /></a>
+          <a
+            href="{{ project.link }}"
+            #animatedElement
+            class="anim"
+            data-animation="1"
+            data-delay=".3s"
+            ><img src="../../assets/imgs/{{ project.img }}" #img round
+          /></a>
         </div>
 
         <div class="d-none d-md-block col-2"></div>
@@ -76,7 +76,7 @@
             *ngFor="let line of project.description"
             class="description d-flex pl-xl-3 pr-xl-1">
             <p
-              class="pl-xl-5 mb-2 anim"
+              class="ml-xl-5 mb-2 anim"
               #animatedElement
               data-animation="1"
               data-delay="0s"
@@ -86,7 +86,7 @@
           </div>
         </div>
 
-        <div class="d-none d-md-block col-2"></div>
+        <div class="d-none d-md-block col-2 col-xl-1"></div>
 
         <div class="d-none col-12 col-md-3 col-xl-2 d-md-flex justify-content-center imgBox">
           <a
@@ -99,7 +99,7 @@
           /></a>
         </div>
 
-        <div class="d-none d-md-block col-1 col-xl-2"></div>
+        <div class="d-none d-md-block col-1 col-xl-3"></div>
       </div>
 
       <!-- ---------------------------------- ODD & EVEN----------------------------------------- -->
