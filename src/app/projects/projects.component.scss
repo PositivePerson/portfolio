@@ -1,6 +1,8 @@
 .mat-snack-bar-container {
+  margin: 8px auto !important;
   max-width: unset !important;
   min-width: unset !important;
+  width: unset !important;
 }
 
 a:hover {
@@ -85,7 +87,8 @@ a.nav-link {
   align-items: center;
   position: relative;
 
-  height: 100vh;
+  // height: 100vh;
+  min-height: 100vh;
 
   padding-top: 4.5em;
   padding-bottom: 4.5em;
@@ -249,12 +252,14 @@ section blockquote {
     width: 10em;
     height: 10em;
   }
-  .description p {
-    font-size: 1.0em;
-    text-indent: 1em;
 
-    margin-top: 1em;
-    margin-bottom: 1em;
+  .description p {
+    background: var(--color-Glass-Blue);
+    padding: 8px 13px 9px 13px;
+    font-size: 14px;
+      margin: 4px 1.9rem;
+    border-radius: 18px;
+    // text-indent: 2em;
   }
   .showToolsButtonDivLeft,
   .showToolsButtonDivRight {
@@ -263,6 +268,9 @@ section blockquote {
     padding-top: .5em;
     margin-left: 0;
     margin-right: 0;
+  }
+  .showToolsButtonDiv {
+    bottom: 5%;
   }
   .imgBox {
     margin-top: auto;
@@ -276,26 +284,23 @@ section blockquote {
 @media (min-width: 576px) and (max-width: 767.98px) {
   .projects {
     padding: 0;
+    padding-bottom: 3rem;
   }
   .projects img {
     width: 13em;
     height: 13em;
   }
   .description p {
-    font-size: 1.05em;
-    text-indent: 2em;
+    background: var(--color-Glass-Blue);
+    padding: 8px 13px 9px 13px;
+    font-size: .95rem;
+    border-radius: 18px;
+    // text-indent: 2em;
   }
-  .projects {
-    // height: 100%;
+  .showToolsButtonDiv {
+    bottom: 5%;
   }
-  .showToolsButtonDivLeft,
-  .showToolsButtonDivRight {
-    position: initial;
 
-    padding-top: 1em;
-    margin-left: 0;
-    margin-right: 0;
-  }
   .imgBox {
     margin-top: auto;
   }
@@ -315,10 +320,13 @@ section blockquote {
     height: 16em;
   }
   .description p {
-    font-size: 1.2em;
+    background: var(--color-Glass-Blue);
+    padding: 8px 13px 9px 13px;
+    font-size: .95rem;
+    border-radius: 18px;
   }
   .imgBox a:hover::before {
-    opacity: 1;
+    opacity: 0;
   }
 }
 // ------------------ L A R G E ------------------
@@ -341,7 +349,7 @@ section blockquote {
 // ------------------ X L ------------------
 @media (min-width: 1200px) {
   .imgBox a:hover::before {
-    opacity: 1;
+    opacity: 0;
   }
   .description p {
     background: var(--color-Glass-Blue);

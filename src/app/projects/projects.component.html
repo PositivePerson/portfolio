@@ -34,7 +34,7 @@
             *ngFor="let line of project.description"
             class="description d-flex pl-xl-1 pr-xl-3">
             <p
-              class="ml-auto mb-2 mr-xl-5 anim"
+              class="ml-auto mr-xl-5 anim"
               #animatedElement
               data-animation="1"
               data-delay=".1s"
@@ -76,7 +76,7 @@
             *ngFor="let line of project.description"
             class="description d-flex pl-xl-3 pr-xl-1">
             <p
-              class="ml-xl-5 mb-2 anim"
+              class="ml-xl-5 anim"
               #animatedElement
               data-animation="1"
               data-delay="0s"
@@ -120,10 +120,10 @@
             </button>
           </div>
 
-      <div class="expandDesc" *ngIf="!isLast">
+      <!-- <div class="expandDesc" *ngIf="!isLast">
         <div class="projectInfo">
           <i class="fas fa-chevron-down"></i>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
