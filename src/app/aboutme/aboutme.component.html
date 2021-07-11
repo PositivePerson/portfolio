@@ -6,20 +6,42 @@
     class="mx-xl-5"
     id="container"
   >
-    <div class="row justify-content-end" id="About_me">
+    <div class="row justify-content-center justify-content-lg-end">
       <div
-        class="col-12 col-md-7 col-lg-4 col-xl-3 px-0"
+        class="col-lg-5"
       >
+      <div class="d-flex">
         <p id="firstDesc">
-          I am self-development frontend passionate. I am usually coding or
-          solving problems. If not - I may be studying :)
+          I am self-development frontend passionate
         </p>
       </div>
-      <!-- <div class="col-md-2 col-lg-3"></div> -->
+        <div class="d-flex">
+          <p id="firstDesc">
+            I am usually coding or
+            solving problems. If not - I may be studying :)
+          </p>
+        </div>
+        <div class="d-flex">
+          <p id="firstDesc">
+            Eager looking for possibility to learn from experienced
+          </p>
+        </div>
+        <div class="d-flex">
+          <p id="firstDesc">
+            Going through
+            a lot of courses to become better day by day
+          </p>
+        </div>
+        <div class="d-flex">
+          <p id="firstDesc">
+            and on top of all
+            trying new, different ways to acquire next skills even faster
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="row justify-content-end">
-      <!-- <div class="col-md-4 col-lg-5"></div> -->
+    <!-- <div class="row justify-content-end">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
         <p id="secondDesc">
           Eager looking for possibility to learn from experienced. Going through
@@ -27,10 +49,10 @@
           trying new, different ways to acquire next skills even faster.
         </p>
       </div>
-    </div>
+    </div> -->
   </div>
 
-  <div id="web_window">
+  <div id="web_window" class="d-none d-lg-block">
     <img src="../../assets/imgs/web_window.svg" alt="Web window drawing">
   </div>
 
@@ -39,7 +61,7 @@
   </div>
 
   <div class="btnBox">
-    <button mat-raised-button (click)="scrollToWorks()">Check my <span class="orange">works</span></button>
+    <button mat-raised-button (click)="scrollToWorks()"><span class="d-none d-md-inline">Check my </span><span class="orange">works</span></button>
     <img src="../../assets/imgs/2_arrows_down.svg" alt="Arrows down">
   </div>
 
