@@ -8,7 +8,7 @@
 #window {
   position: relative;
   max-width: 1223px;
-  min-height: 70vh;
+  // min-height: 70vh;
   max-height: 670px;
   // max-height: 45rem;
   padding: 4rem 2rem 2rem 2rem;
@@ -84,5 +84,53 @@
   img {
     width: 7rem;
     margin: 0 2em;
+  }
+}
+
+// ------------------ X S ------------------
+@media (max-width: 575.98px) {
+  #whiteboard {
+    max-height: 545px;
+  }
+}
+
+// ------------------S M A L L ------------------
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #whiteboard {
+    max-height: 387px;
+  }
+  #caption {
+    font-size: 33px;
+    padding: 1.75rem 0 ;
+
+    img {
+      width: 20px;
+    }
+  }
+  .cards {
+    margin-top: 3.3rem;
+
+    img {
+      width: 5rem;
+    }
+  }
+}
+
+// ------------------ M E D I U M ------------------
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #whiteboard {
+    max-height: 500px;
+  }
+  #caption {
+    padding: 2rem 0 ;
+  }
+}
+// ------------------ L A R G E ------------------
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #whiteboard {
+    max-height: 500px;
+  }
+  #caption {
+    padding: 2.3rem 0;
   }
 }

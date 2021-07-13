@@ -2,6 +2,12 @@
   font-family: monospace;
   font-style: normal;
   font-size: 13px;
+
+  & > div {
+    // max-width: 80vh;
+    overflow-x: scroll;
+
+  }
 }
 
 [data-level="0"] {
@@ -18,4 +24,40 @@
 }
 [data-level="4"] {
   fill: #216e39;
+}
+
+
+// ------------------ X S ------------------
+@media (max-width: 575.98px) {
+  :host {
+    & > div {
+      max-width: 450px;
+    }
+  }
+}
+
+// ------------------S M A L L ------------------
+@media (min-width: 576px) and (max-width: 767.98px) {
+  :host {
+    & > div {
+      max-width: 450px;
+    }
+  }
+}
+
+// ------------------ M E D I U M ------------------
+@media (min-width: 768px) and (max-width: 991.98px) {
+  :host {
+    & > div {
+      max-width: 650px;
+    }
+  }
+}
+// ------------------ L A R G E ------------------
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  :host {
+    & > div {
+      max-width: 650px;
+    }
+  }
 }
