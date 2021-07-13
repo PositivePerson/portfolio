@@ -1,0 +1,21 @@
+:host {
+  font-family: monospace;
+  font-style: normal;
+  font-size: 13px;
+}
+
+[data-level="0"] {
+  fill: #E6E6E6;
+}
+[data-level="1"] {
+  fill: #9be9a8;
+}
+[data-level="2"] {
+  fill: #40c463;
+}
+[data-level="3"] {
+  fill: #30a14e;
+}
+[data-level="4"] {
+  fill: #216e39;
+}
