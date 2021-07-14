@@ -21,6 +21,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 // import { setTheme } from 'ngx-bootstrap/utils';
 
 import { ParallaxScrollModule } from 'ng2-parallaxscroll';
+import { GithubComponent } from './github/github.component';
+import { ContributionsComponent } from './github/contributions/contributions.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ParallaxScrollModule } from 'ng2-parallaxscroll';
     CertificatesComponent,
     ArrowsComponent,
     ToolsSnackBarComponent,
-    ContactMeComponent
+    ContactMeComponent,
+    GithubComponent,
+    ContributionsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,10 @@
 
 footer {
   padding-bottom: 2.0em;
-}
-
-footer .contact {
-	font-size: 1.7em;
-	padding-bottom: 0.05em;
+  .contact {
+    font-size: 1.7em;
+    padding-bottom: 0.05em;
+  }
 }
 
 button {
@@ -41,4 +40,11 @@ a:hover {
 /* selected link */
 a:active {
   color: var(--default-letters);
+}
+
+// ------------------ XL ------------------
+@media (min-width: 1200px) {
+  footer > div > div:nth-of-type(2) {
+    max-width: 20em;
+  }
 }

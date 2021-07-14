@@ -89,8 +89,20 @@
 
 // ------------------ X S ------------------
 @media (max-width: 575.98px) {
+  #caption {
+    font-size: 25px;
+    padding: 2.3rem 0;
+
+    img {
+      width: 15px;
+      margin: 0 .25rem;
+    }
+  }
+  #window {
+    padding: .75rem;
+  }
   #whiteboard {
-    max-height: 545px;
+    max-height: 475px;
   }
 }
 
