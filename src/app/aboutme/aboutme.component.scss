@@ -126,6 +126,10 @@ section {
   background: linear-gradient(300deg, rgba(57,62,70,1) 0%, rgba(57,62,70,1) 40%, rgba(92,97,105,1) 100%);
 }
 
+.animHoverLeft{
+  transition: all ease 250ms;
+}
+
 // ------------------ X S ------------------
 @media (max-width: 575.98px) {
 	p {
@@ -272,6 +276,9 @@ section {
       font-size: 16px;
     }
   }
+  .animHoverLeft:hover {
+    transform: translateX(15px);
+  }
 }
 
 // ------------------ L A R G E ------------------
@@ -291,6 +298,9 @@ section {
   #secondSection {
     min-height: 100vh;
 	}
+  .animHoverLeft:hover {
+    transform: translateX(-15px);
+  }
 }
 
 // ------------------ X L ------------------
@@ -305,8 +315,8 @@ section {
 	}
   #web_tasks_checking {
     position: absolute;
-    bottom: 10%;
-    right: 12%;
+    bottom: 9%;
+    right: 8%;
     font-size: 2.05em;
 
     z-index: 1;
@@ -314,4 +324,7 @@ section {
   #secondSection {
     min-height: 100vh;
 	}
+  .animHoverLeft:hover {
+    transform: translateX(-15px);
+  }
 }
