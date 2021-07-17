@@ -139,7 +139,7 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     })
 
     arrayOfImgs.forEach(element => {
-      console.log(element.nativeElement.attributes[1].nodeValue);
+      // console.log(element.nativeElement.attributes[1].nodeValue);
       element.nativeElement.parentElement.parentElement.parentElement.parentElement.style.background = `
       linear-gradient(0deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
       url(${element.nativeElement.attributes[1].nodeValue}) no-repeat center center `;

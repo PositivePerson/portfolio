@@ -31,13 +31,13 @@
           [ngClass]="{ 'description-left': even, 'description-right': odd }"
         >
           <div
-            *ngFor="let line of project.description"
+            *ngFor="let line of project.description; let i = index;"
             class="description d-flex pl-xl-1 pr-xl-3">
             <p
               class="ml-auto mr-xl-5 anim"
               #animatedElement
               data-animation="1"
-              data-delay=".1s"
+              [attr.data-delay]="i*0.2 + 's'"
             >
               {{ line }}
             </p>
@@ -73,13 +73,13 @@
           [ngClass]="{ 'description-left': even, 'description-right': odd }"
         >
           <div
-            *ngFor="let line of project.description"
+            *ngFor="let line of project.description; let i = index;"
             class="description d-flex pl-xl-3 pr-xl-1">
             <p
               class="ml-xl-5 anim"
               #animatedElement
               data-animation="1"
-              data-delay="0s"
+              [attr.data-delay]="i*0.2 + 's'"
             >
             {{ line }}
             </p>
@@ -104,11 +104,14 @@
 
       <!-- ---------------------------------- ODD & EVEN----------------------------------------- -->
 
-      <div
+      <!-- <div
             class="showToolsButtonDiv w-100"
             #animatedElement
             data-animation="2"
             data-delay="0s"
+          > -->
+      <div
+            class="showToolsButtonDiv w-100"
           >
             <button
               mat-raised-button
