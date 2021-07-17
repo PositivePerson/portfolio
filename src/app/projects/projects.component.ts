@@ -109,18 +109,10 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     const projectPageElements = this.animatedElements.toArray();
     const arrayOfImgs = this.imgs.toArray();
 
-    // console.log("projectPageElements ", projectPageElements);
-    // console.log("type of .nativeElement from this array above: ", typeof projectPageElements[0].nativeElement);
-
     this.projectObserver = new IntersectionObserver((entries) => {
-
-      // console.log("intersectionRatio is: " + entries[0].intersectionRatio);
 
       entries.forEach(entry => {
         if (entry.intersectionRatio > 0) {
-          // console.log( typeof entry.target );
-          // console.log(entry.target);
-
           //@ts-ignore
           entry.target.style.animation = `anim${entry.target.dataset.animation} .8s ${entry.target.dataset.delay} forwards ease-out`;
           // console.log("indeed intersectionRatio is: " + entry.intersectionRatio);

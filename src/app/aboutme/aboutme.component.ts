@@ -62,12 +62,12 @@ export class AboutmeComponent implements OnInit {
     });
     const controller = new ScrollMagic.Controller();
 
-    tlAbout.from("#web_window", .5, { x: -100, opacity: 0, ease: Power4.easeInOut }, "=0");
+    tlAbout.from("#web_window", .5, { x: -100, opacity: 0, ease: Power4.easeInOut }, "=-.1");
     tlAbout.to("#web_window", .5, { x: 0, opacity: 1 });
 
     $('.animHoverLeft p').each(function(){
       console.log("$('.animHoverLeft p'): ", $('.animHoverLeft p'))
-      tlAbout.from($(this), .3, { x: 300, opacity: 0, ease: Power4.easeInOut }, "=-.3");
+      tlAbout.from($(this), .3, { x: 300, opacity: 0, ease: Power4.easeInOut }, "=-.9");
       tlAbout.to($(this), .3, { x: 0, opacity: 1, ease: Power4.easeInOut });
 
       // var scene2 = new ScrollMagic.Scene({
@@ -93,7 +93,7 @@ export class AboutmeComponent implements OnInit {
       // .setPin("#secondSection")
       .setTween(tlAbout)
       .addTo(controller)
-      .delay(0.2);
+      .delay(5);
 
     function updatePercentage() {
       tlAbout.progress();
