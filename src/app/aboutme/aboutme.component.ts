@@ -62,17 +62,27 @@ export class AboutmeComponent implements OnInit {
     });
     const controller = new ScrollMagic.Controller();
 
-    tlAbout.from("#web_window", 1, { x: -100, opacity: 0, ease: Power4.easeInOut }, "=-.8");
-    tlAbout.to("#web_window", 1, { x: 0, opacity: 1 });
+    tlAbout.from("#web_window", .5, { x: -100, opacity: 0, ease: Power4.easeInOut }, "=0");
+    tlAbout.to("#web_window", .5, { x: 0, opacity: 1 });
 
-    tlAbout.from("#firstDesc", 1, { x: 300, opacity: 0, ease: Power4.easeInOut }, "=-1.8");
-    tlAbout.to("#firstDesc", 1, { x: 0, opacity: 1, ease: Power4.easeInOut });
+    $('.animHoverLeft p').each(function(){
+      console.log("$('.animHoverLeft p'): ", $('.animHoverLeft p'))
+      tlAbout.from($(this), .3, { x: 300, opacity: 0, ease: Power4.easeInOut }, "=-.3");
+      tlAbout.to($(this), .3, { x: 0, opacity: 1, ease: Power4.easeInOut });
 
-    tlAbout.from("#secondDesc", 1, { x: -180, opacity: 0, ease: Power4.easeInOut }, "=-2.35");
-    tlAbout.to("#secondDesc", 1, { x: 0, opacity: 1 });
+      // var scene2 = new ScrollMagic.Scene({
+      //   triggerElement: this
+      // })
+    })
 
-    tlAbout.from("#nextPage i", 1, { opacity: 0 }, "=-2");
-    tlAbout.to("#nextPage i", 1, { opacity: 1 });
+    // tlAbout.from("#firstDesc", 1, { x: 300, opacity: 0, ease: Power4.easeInOut }, "=-1.8");
+    // tlAbout.to("#firstDesc", 1, { x: 0, opacity: 1, ease: Power4.easeInOut });
+
+    // tlAbout.from("#secondDesc", 1, { x: -180, opacity: 0, ease: Power4.easeInOut }, "=-2.35");
+    // tlAbout.to("#secondDesc", 1, { x: 0, opacity: 1 });
+
+    // tlAbout.from("#nextPage i", 1, { opacity: 0 }, "=-2");
+    // tlAbout.to("#nextPage i", 1, { opacity: 1 });
 
     const scene1 = new ScrollMagic.Scene({
       triggerElement: "#secondSection",
@@ -82,7 +92,8 @@ export class AboutmeComponent implements OnInit {
     })
       // .setPin("#secondSection")
       .setTween(tlAbout)
-      .addTo(controller);
+      .addTo(controller)
+      .delay(0.2);
 
     function updatePercentage() {
       tlAbout.progress();

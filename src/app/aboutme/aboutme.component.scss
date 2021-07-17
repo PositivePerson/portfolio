@@ -34,6 +34,8 @@
   top: 22%;
   left: 12%;
   font-size: 1.7em;
+
+  transition: all 250ms ease-out;
 }
 
 #web_tasks_checking {
@@ -128,6 +130,10 @@ section {
 
 .animHoverLeft{
   transition: all ease 250ms;
+
+  p {
+    transition: all 250ms ease-out;
+  }
 }
 
 // ------------------ X S ------------------
