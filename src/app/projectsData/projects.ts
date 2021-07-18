@@ -85,11 +85,14 @@ export const PROJECTS: Project[] = [
     description: ["Kittypedia", " Many kitties will appear there", "They render randomly from database of thousands of cats", "All created using react context for API in Next.js structure"],
     tools:
       [
+        "Next",
         "Javascript",
-        "Howler",
-        "Paper",
-        "HTML5",
-        "CSS3"
+        "React",
+        "Jsx",
+        "CSS3",
+        "Styled-components",
+        "Framer-motion",
+        "Axios"
       ]
    },
   {
@@ -113,10 +116,11 @@ export const PROJECTS: Project[] = [
       //       PaperScript: true
       //     }
       [
+        "React",
+        "Materialize-css",
+        "Styled-components",
         "Javascript",
-        "Howler",
-        "Paper",
-        "HTML5",
+        "Jsx",
         "CSS3"
       ]
    }
